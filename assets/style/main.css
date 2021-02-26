@@ -96,14 +96,10 @@
 
 nav {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-nav .navbar-fbp ul li {
-  margin: 25px;
-}
-
-nav .navbar-fbp ul .underline-bar {
+nav .navbar-collapse .underline-bar {
   height: 5px;
   background-color: transparent;
   width: 0%;
@@ -112,12 +108,12 @@ nav .navbar-fbp ul .underline-bar {
   margin: 0 auto;
 }
 
-nav .navbar-fbp ul .active .underline-bar {
+nav .navbar-collapse .active .underline-bar {
   background-color: #006478;
   width: 100%;
 }
 
-nav .navbar-fbp ul li:hover .underline-bar {
+nav .navbar-collapse li:hover .underline-bar {
   background-color: #006478;
   width: 100%;
 }
@@ -244,34 +240,6 @@ nav .navbar-fbp ul li:hover .underline-bar {
   color: #fff;
 }
 
-.bg-coach {
-  background-image: url("./../../images/back-coach.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-@media all and (max-width: 768px) {
-  .bg-coach {
-    padding-top: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("./../../images/coach-phone.png");
-  }
-}
-
-.bg-coach h1 {
-  padding-top: 30px;
-}
-
-@media all and (max-width: 768px) {
-  .bg-coach h1 {
-    padding-top: 30px;
-  }
-}
-
 .img-coach {
   position: absolute;
   top: -19%;
@@ -357,15 +325,6 @@ section {
   margin: 0;
   padding: 0;
   display: inline-block;
-}
-
-.bg-contact {
-  background-image: url("../../images/bg-contact.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  height: 30vh;
 }
 
 .card-contact {

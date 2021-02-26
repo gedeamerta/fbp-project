@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
-                    <img class="logo-footer" src="./images/footer-logo.png" alt="" />
+                    <img class="logo-footer" src="<?= baseurl; ?>/assets/images/footer-logo.png" alt="" />
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
@@ -36,11 +36,11 @@
                     <ul>
                         <li class="title">Contact</li>
                         <li>
-                            <img src="./images/mail.svg" alt="" />
+                            <img src="<?= baseurl; ?>/assets/images/mail.svg" alt="" />
                             <a href="#">fbp.bali@gmail.com</a>
                         </li>
                         <li>
-                            <img src="./images/phone.svg" alt="" />
+                            <img src="<?= baseurl; ?>/assets/images/phone.svg" alt="" />
                             <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
                         </li>
                     </ul>

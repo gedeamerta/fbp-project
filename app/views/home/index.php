@@ -1,7 +1,7 @@
 <!-- Banner Start -->
 <div class="container">
     <div class="row row-banner">
-        <img class="banner-image-left" src="<?= baseurl ?>/assets/images/fbp-text.png" alt="" />
+        <img class="banner-image-left" src="<?= baseurl; ?>/assets/images/fbp-text.png" alt="" />
         <div class="col-lg-6 col-sm-12">
             <h1 class="banner-text" data-aos="fade-left" data-aos-duration="3000">
                 Work Hard in Silence Let Success Be Your Noise.

@@ -1,7 +1,7 @@
 <?php 
-define('baseurl', 'http://Future-Body-Project.local');
+define('baseurl', 'http://localhost/fbp-project');
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'db_bookstore');
+define('DB_USER', 'amerta');
+define('DB_PASS', 'amerta');
+define('DB_NAME', '');

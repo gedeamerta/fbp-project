@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?= baseurl; ?>/assets/style/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
-    <link rel="stylesheet" href="<?= baseurl; ?>/style/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="<?= baseurl; ?>/assets/style/font-awesome/css/all.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title><?= $data['title'] ?></title>
 
@@ -38,6 +38,23 @@
             padding-top: 30px;
         }
     }
+
+    .bg-contact {
+        background-image: url("<?= baseurl ?>/assets/images/bg-contact.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        height: 30vh;
+    }
+
+
+    @media all and (max-width: 320px) {
+        .logo-footer {
+            margin-left: 3em;
+            padding-top: 20em;
+        }
+    }
     </style>
 
 </head>
@@ -45,7 +62,7 @@
 <body>
     <!-- Navbar Start  -->
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-expand-md navbar-expand-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html">
                 <img src="<?= baseurl ?>/assets/images/logo.png" alt="" />
             </a>
@@ -53,9 +70,10 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse navbar-fbp" id="navbarNav">
+            <div class="collapse navbar-collapse"></div>
+            <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item active ">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         <div class="underline-bar"></div>
                     </li>
