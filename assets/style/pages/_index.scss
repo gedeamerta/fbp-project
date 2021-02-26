@@ -1,0 +1,336 @@
+// Banner Start
+.row-banner {
+  margin-top: 5em;
+  @media screen and (max-width: 576px) {
+    margin-top: 0;
+  }
+}
+.banner-text {
+  font-weight: 800;
+  font-size: 64px;
+  color: #3d3d3d;
+}
+
+.sub-banner-text {
+  color: #838383;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.banner-image-right {
+  margin-left: 10rem;
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.banner-image-left {
+  position: absolute;
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+// Banner End
+
+.text-title {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.subtitle-text {
+  font-weight: 200;
+  font-size: 24px;
+}
+
+.underline-title-text {
+  background-image: linear-gradient(#00d5ff 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 70%;
+}
+
+// Card Services
+.card-deck {
+  margin-left: 15px !important;
+}
+.card-services-container {
+  margin: 15px;
+}
+
+.card-services {
+  border: none !important;
+  padding: 10px;
+  box-shadow: 2px 4px 12px #e5e5e5 !important;
+  border-radius: 0px 0px 0px 50px !important;
+  transition: all 0.4s ease-in-out;
+
+  @media all and (min-width: 576px) {
+    margin-top: 30px;
+  }
+  img {
+    width: 50%;
+    margin-top: 2rem;
+  }
+}
+.text-title-card {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  color: #000000;
+
+  @media all and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+// Our Coach
+.text-title-coach {
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+}
+
+.subtitle-text-coach {
+  font-weight: 400;
+  font-size: 26px;
+  color: #fff;
+}
+
+.quotes-text-coach {
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+}
+
+.img-coach {
+  position: absolute;
+  top: -19%;
+  left: 40%;
+  z-index: 0;
+  @media all and (max-width: 768px) {
+    display: none;
+  }
+}
+
+// Carousel Testimonials
+:active,
+:hover,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+section {
+  padding: 30px 0;
+}
+.testimonials .box {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  border-radius: 0 50px 0 50px;
+  margin-bottom: 40px;
+  transition: all 0.4s ease-in-out;
+}
+.testimonials .box h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #313e4b;
+}
+.testimonials .box:hover {
+  transform: translateY(-10px);
+}
+.testimonials .box h3 span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #00d5ff;
+}
+.testimonials .box p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 0;
+  color: #727f8c;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+.testimonials .box .image img {
+  width: 200px;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+// Contact
+.bg-contact {
+  background-image: url("../../images/bg-contact.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 30vh;
+}
+
+.card-contact {
+  background-color: #006478 !important;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  .container-contact {
+    @media all and (max-width: 576px) {
+      position: relative;
+    }
+  }
+}
+
+.subtitle-contact {
+  font-weight: 400;
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  @media all and (max-width: 576px) {
+    font-size: 20px;
+  }
+}
+
+.subtitle-card-contact {
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  color: #fff;
+}
+
+.title-card-contact {
+  font-weight: 700;
+  font-size: 30px;
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+
+  @media all and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.link-contact {
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
+
+// Footer
+.footer {
+  padding-top: 10em;
+
+  .column {
+    @media all and (max-width: 576px) {
+      margin-left: 3em;
+    }
+    .logo-footer {
+      @media all and (max-width: 576px) {
+        margin-left: 3em;
+        padding-top: 7em;
+      }
+    }
+    ul {
+      width: 100%;
+      li {
+        list-style: none;
+        padding: 5px 0px;
+        font-weight: 600;
+        color: gray;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1em;
+        color: gray;
+        transition: 0.5s;
+      }
+      .underline-bar {
+        height: 5px;
+        background-color: transparent;
+        width: 0%;
+        transition: width 0.2s, background-color 0.5s;
+      }
+
+      .active {
+        .underline-bar {
+          background-color: #006478;
+          width: 10%;
+        }
+      }
+
+      li:hover {
+        .underline-bar {
+          background-color: #006478;
+          width: 50%;
+        }
+      }
+    }
+
+    i {
+      font-size: 2em;
+      margin: 0px 10px;
+    }
+
+    .title {
+      font-weight: 800;
+      font-size: 20px;
+      color: #000;
+    }
+  }
+
+  @media all and (max-width: 576px) {
+    padding-top: 30rem;
+  }
+}
+
+.sub-footer {
+  background: #006478;
+  padding: 5px 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .footer .column {
+    width: 90%;
+    display: block;
+    margin: 0% 0%;
+  }
+
+  .footer .column:nth-child(2),
+  .footer .column:nth-child(3) {
+    width: 40%;
+    display: inline-block;
+  }
+}

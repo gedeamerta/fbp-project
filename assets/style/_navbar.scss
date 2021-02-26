@@ -1,0 +1,33 @@
+nav {
+  font-weight: 800;
+  font-size: 24px;
+  .navbar-fbp {
+    ul {
+      li {
+        margin: 25px;
+      }
+
+      .underline-bar {
+        height: 5px;
+        background-color: transparent;
+        width: 0%;
+        transition: width 0.2s, background-color 0.5s;
+        margin: 0 auto;
+      }
+
+      .active {
+        .underline-bar {
+          background-color: #006478;
+          width: 100%;
+        }
+      }
+
+      li:hover {
+        .underline-bar {
+          background-color: #006478;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

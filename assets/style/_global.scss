@@ -1,0 +1,82 @@
+* {
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  @media screen and (min-width: 300px) and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 5em;
+  }
+}
+.btn span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  transition: 0.3s;
+}
+
+/*--- btn-3 ---*/
+.btn-3 {
+  padding: 5px;
+}
+.btn-3 span {
+  color: rgb(255, 255, 255);
+  background-color: #00d5ff;
+}
+.btn-3::before,
+.btn-3::after {
+  background: transparent;
+  z-index: 2;
+}
+
+/* 11. hover-border-1 */
+.btn.hover-border-1::before,
+.btn.hover-border-1::after {
+  width: 15%;
+  height: 25%;
+  transition: 0.35s;
+}
+.btn.hover-border-1::before {
+  top: 0;
+  left: 0;
+  border-left: 1px solid rgb(28, 31, 30);
+  border-top: 1px solid rgb(28, 31, 30);
+}
+.btn.hover-border-1::after {
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid rgb(28, 31, 30);
+  border-bottom: 1px solid rgb(28, 31, 30);
+}
+.btn.hover-border-1:hover::before,
+.btn.hover-border-1:hover::after {
+  width: 100%;
+  height: 98%;
+}

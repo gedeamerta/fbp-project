@@ -1,0 +1,44 @@
+.card-pages-services {
+  border: none !important;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  box-shadow: 2px 4px 12px #e5e5e5 !important;
+  border-radius: 0px 0px 0px 50px !important;
+  @media all and (max-width: 768px) {
+    margin-top: 30px;
+  }
+  img {
+    width: 50%;
+    margin-top: 2rem;
+  }
+}
+
+.card-body-packages {
+  a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  a:hover {
+    color: #00d5ff;
+    text-decoration: none;
+  }
+}
+
+.title-packages-card {
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 1em;
+}
+
+.subtitle-packages {
+  font-weight: 500;
+  font-size: 20px;
+}
