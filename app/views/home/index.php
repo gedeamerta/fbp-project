@@ -163,65 +163,27 @@
         <div class="container">
             <div class="row">
                 <!-- Box-1 -->
+                <?php foreach($data['getTesti'] as $testi) : ?>
                 <div class="col-lg-6">
                     <div class="box d-flex align-items-center wow fadeInLeft">
                         <div class="content">
-                            <h3>Jhon Kennedy <br /><span>Web Programmer</span></h3>
+                            <h3><?= $testi['name']?><br /><span><?=$testi['job']?></span></h3>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and type
-                                setting industry when an unknown printer
+                                <?=$testi['descriptions']?>
                             </p>
                         </div>
+                        <?php if($testi['photos']) : ?>
                         <div class="image">
-                            <img src="<?= baseurl ?>/assets/images/coach.png" alt="" class="img-fluid" />
+                            <img src="<?= baseurl ?>/assets/images/<?= $testi['photos']?>" alt="" class="img-fluid" />
                         </div>
+                        <?php else : ?>
+                        <div class="image">
+                            <img src="<?= baseurl ?>/assets/images/default.jpg" alt="" class="img-fluid" />
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
-                <!-- Box-2 -->
-                <div class="col-lg-6">
-                    <div class="box d-flex align-items-center wow fadeInRight">
-                        <div class="content">
-                            <h3>Your Name <br /><span>Entepreneur</span></h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and type
-                                setting industry when an unknown printer
-                            </p>
-                        </div>
-                        <div class="image">
-                            <img src="<?= baseurl ?>/assets/images/coach.png" alt="" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
-                <!-- Box-3 -->
-                <div class="col-lg-6">
-                    <div class="box d-flex align-items-center wow fadeInLeft">
-                        <div class="content">
-                            <h3>Your Name <br /><span>Graphic Designer</span></h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and type
-                                setting industry when an unknown printer
-                            </p>
-                        </div>
-                        <div class="image">
-                            <img src="<?= baseurl ?>/assets/images/coach.png" alt="" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
-                <!-- Box-4 -->
-                <div class="col-lg-6">
-                    <div class="box d-flex align-items-center wow fadeInRight">
-                        <div class="content">
-                            <h3>Your Name <br /><span>Graphic Designer</span></h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and type
-                                setting industry when an unknown printer
-                            </p>
-                        </div>
-                        <div class="image">
-                            <img src="<?= baseurl ?>/assets/images/coach.png" alt="" class="img-fluid" />
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>

@@ -13,6 +13,10 @@
     <title><?= $data['title'] ?></title>
 
     <style>
+    nav ul li {
+        margin: 15px;
+    }
+
     .bg-coach {
         background-image: url("<?= baseurl ?>/assets/images/back-coach.png");
         background-position: center;
@@ -73,24 +77,24 @@
             <div class="collapse navbar-collapse"></div>
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active ">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item <?= $data['set_active'] == 'index' ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= baseurl; ?>/home">Home <span class="sr-only">(current)</span></a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="our-services.html">Our Services</a>
+                    <li class="nav-item <?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= baseurl; ?>/services">Our Services</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="our-coach.html">Our Coach</a>
+                    <li class="nav-item <?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= baseurl; ?>/home/coach">Our Coach</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="before-after.html">Before & After</a>
+                    <li class="nav-item <?= $data['set_active'] == 'result' ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= baseurl; ?>/home/result">Before & After</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                    <li class="nav-item <?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
+                        <a class="nav-link" href="<?= baseurl; ?>/home/contact">Contact</a>
                         <div class="underline-bar"></div>
                     </li>
                 </ul>

@@ -10,24 +10,24 @@
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
                     <ul>
                         <li class="title">Features</li>
-                        <li class="active">
-                            <a href="#">Home</a>
+                        <li class="<?= $data['set_active'] == 'index' ? 'active' : '' ?>">
+                            <a href="<?= baseurl; ?>/home">Home</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="">
-                            <a href="#">Our Services</a>
+                        <li class="<?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
+                            <a href="<?= baseurl; ?>/services">Our Services</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="">
-                            <a href="#">Our Coach</a>
+                        <li class="<?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
+                            <a href="<?= baseurl; ?>/home/coach">Our Coach</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="">
-                            <a href="#">Before & After</a>
+                        <li class="<?= $data['set_active'] == 'result' ? 'active' : '' ?>">
+                            <a href="<?= baseurl; ?>/home/result">Before & After</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="">
-                            <a href="#">Contact</a>
+                        <li class="<?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
+                            <a href="<?= baseurl; ?>/home/contact">Contact</a>
                             <div class="underline-bar"></div>
                         </li>
                     </ul>
@@ -49,11 +49,11 @@
                     <ul>
                         <li class="title">Follow Us</li>
                         <li>
-                            <img src="./images/instagram.svg" alt="" />
+                            <img src="<?= baseurl; ?>/assets/images/instagram.svg" alt="" />
                             <a href="#">fbp_bali</a>
                         </li>
                         <li>
-                            <img src="./images/facebook.svg" alt="" style="padding-left: 2px" />
+                            <img src="<?= baseurl; ?>/assets/images/facebook.svg" alt="" style="padding-left: 2px" />
                             <a href="#">fbp_bali</a>
                         </li>
                     </ul>
