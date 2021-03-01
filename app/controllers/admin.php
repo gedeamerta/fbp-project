@@ -12,7 +12,8 @@ class Admin extends Controller
                 Flasher::setFlash('success', 'Success Login');
                 header("Location: ". baseurl . "/admin/dashboard");
             }else {
-                var_dump('gagal');
+                Flasher::setFlash('error', 'Failed Login');
+                header("Location: ". baseurl . "/admin");
             }
         }
     }
@@ -54,24 +55,26 @@ class Admin extends Controller
             header("Location: " . baseurl . "/admin/dashboard");
         }
     }
-
-    public function add_services()
+    
+    public function packages()
     {
-        if ($this->model('Admin_model')->addNewServices($_POST) > 0) {
+        $data['title'] = 'Dashboard Packages';
+        $data['set_active'] = 'packages'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $this->view('layouts/header-admin', $data);
+        $this->view('admin/packages', $data);
+        $this->view('layouts/footer-admin',$data);
+    }
+
+    public function add_packages()
+    {
+        if ($this->model('Admin_model')->addNewPackages($_POST) > 0) {
             Flasher::setFlash('success', 'Success Add Data Services');
             header("Location: " . baseurl . "/admin/dashboard");
         } else {
             Flasher::setFlash('error', 'Fail Update Data Admin');
             header("Location: " . baseurl . "/admin/dashboard");
         }
-    }
-
-    public function packages()
-    {
-        $data['title'] = 'Dashboard Packages';
-        $this->view('layouts/header-admin', $data);
-        $this->view('admin/packages', $data);
-        $this->view('layouts/footer-admin',$data);
     }
 
     public function setOut()

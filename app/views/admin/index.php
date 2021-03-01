@@ -20,11 +20,13 @@
     <link rel="stylesheet" type="text/css" href="<?=baseurl ?>/assets/login-assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="<?=baseurl ?>/assets/login-assets/css/main.css">
     <title><?= $data['title']?></title>
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!--===============================================================================================-->
 </head>
 
 <body>
-
+    <?php Flasher::flash() ?>
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
@@ -62,6 +64,7 @@
             </div>
         </div>
     </div>
+
 
     <!--===============================================================================================-->
     <script src="<?=baseurl ?>/assets/login-assets/vendor/jquery/jquery-3.2.1.min.js"></script>
