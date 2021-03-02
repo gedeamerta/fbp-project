@@ -18,33 +18,6 @@ class Admin_model
         }
     }
     
-    //slug the category
-    public static function slugify($text)
-    {
-        // replace non letter or digits by -
-        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
-
-        // transliterate
-        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-
-        // remove unwanted characters
-        $text = preg_replace('~[^-\w]+~', '', $text);
-
-        // trim
-        $text = trim($text, '-');
-
-        // remove duplicate -
-        $text = preg_replace('~-+~', '-', $text);
-
-        // lowercase
-        $text = strtolower($text);
-
-        if (empty($text)) {
-            return 'n-a';
-        }
-
-        return $text;
-    }
 
     public function login_admin($data)
     {
@@ -65,6 +38,12 @@ class Admin_model
         }
     }
 
+    public function getAdmin()
+    {
+        $this->db->query('SELECT * FROM admins');
+        return $this->db->resultAll();
+    }
+
     public function getAdminId($id)
     {
         $this->db->query('SELECT * FROM admins WHERE id = :id');
@@ -74,7 +53,9 @@ class Admin_model
 
     public function addNewAdmin($data)
     {
+        $fullname = htmlspecialchars($data['fullname']);
         $username = htmlspecialchars($data['username']);
+        $email = htmlspecialchars($data['email']);
         $password = htmlspecialchars($data['password']);
 
         //validate password
@@ -91,9 +72,11 @@ class Admin_model
                             alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number.")
                     </script>';
             } else {
-                $query = "INSERT INTO admins (username, password) VALUES (:username, :password)";
+                $query = "INSERT INTO admins (fullname, username, email, password) VALUES (:fullname, :username, :email, :password)";
                 $this->db->query($query);
+                $this->db->bind("fullname", $fullname);
                 $this->db->bind("username", $username);
+                $this->db->bind("email", $email);
                 $this->db->bind("password", password_hash($password, PASSWORD_DEFAULT));
                 $this->db->execute();
                 return $this->db->rowCount();

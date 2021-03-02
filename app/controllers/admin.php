@@ -22,11 +22,12 @@ class Admin extends Controller
     {
         if(!isset($_SESSION['login_admin'])){
             $data['title'] = 'Login Admin';
-            $this->view('admin/index',$data);  
+            $this->view('admin/login',$data);  
         }else {
             $data['title'] = 'Dashboard Admin'; 
             $data['set_active'] = 'dashboard'; 
             $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+            $data['admin'] = $this->model("Admin_model")->getAdmin();
             $this->view('layouts/header-admin', $data);
             $this->view('admin/dashboard', $data);
             $this->view('layouts/footer-admin',$data);
@@ -55,12 +56,14 @@ class Admin extends Controller
             header("Location: " . baseurl . "/admin/dashboard");
         }
     }
-    
+
+                
     public function packages()
     {
         $data['title'] = 'Dashboard Packages';
         $data['set_active'] = 'packages'; 
         $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['packages'] = $this->model("Packages_model")->getAllPackages();
         $this->view('layouts/header-admin', $data);
         $this->view('admin/packages', $data);
         $this->view('layouts/footer-admin',$data);
@@ -68,12 +71,12 @@ class Admin extends Controller
 
     public function add_packages()
     {
-        if ($this->model('Admin_model')->addNewPackages($_POST) > 0) {
-            Flasher::setFlash('success', 'Success Add Data Services');
-            header("Location: " . baseurl . "/admin/dashboard");
+        if ($this->model('Packages_model')->addPackages($_POST) > 0) {
+            Flasher::setFlash('success', 'Success Add Packages');
+            header("Location: " . baseurl . "/admin/packages");
         } else {
-            Flasher::setFlash('error', 'Fail Update Data Admin');
-            header("Location: " . baseurl . "/admin/dashboard");
+            Flasher::setFlash('error', 'Fail Add Packages');
+            header("Location: " . baseurl . "/admin/packages");
         }
     }
 

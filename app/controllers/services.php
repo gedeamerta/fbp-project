@@ -1,5 +1,6 @@
 <?php
 class Services extends Controller {
+
     public function index()
     {
         $data['title'] = 'Future Body Project - Services'; 
@@ -21,6 +22,5 @@ class Services extends Controller {
         $this->view('layouts/header', $data);
         $this->view('services/details', $data);
         $this->view('layouts/footer',$data);
-
     }
 }

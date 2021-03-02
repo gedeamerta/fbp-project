@@ -13,9 +13,10 @@
     <meta name="robots" content="noindex,nofollow">
     <title><?= $data['title']?> </title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?= baseurl; ?>/assets/style/font-awesome/css/all.css" />
     <!-- Favicon icon -->
-    <!-- <link rel="icon" type="image/png" sizes="16x16"
-        href="<?= baseurl ?>/assets/admin-assets/plugins/images/favicon.png"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= baseurl ?>/assets/images/logo.png">
     <!-- Custom CSS -->
     <link href="<?= baseurl ?>/assets/admin-assets/plugins/bower_components/chartist/dist/chartist.min.css"
         rel="stylesheet">
@@ -24,7 +25,9 @@
     <!-- Custom CSS -->
     <link href="<?= baseurl ?>/assets/admin-assets/css/style.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </head>
 
 <body>
@@ -43,7 +46,7 @@
                     <a class="navbar-brand" href="dashboard.html">
                         <!-- Logo icon -->
                         <b class="logo-icon">
-                            <img src="<?= baseurl ?>/assets/images/logo.png" alt="homepage" style="margin-left: 2em" />
+                            <img src="<?= baseurl ?>/assets/images/fbp-admin.png" alt="homepage" />
                         </b>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
@@ -53,7 +56,8 @@
                     <ul class="navbar-nav ms-auto d-flex align-items-center">
                         <li>
                             <a class="profile-pic" href="#">
-                                <span class="text-white font-medium"> <?= $data['admin_single']['username'] ?></span>
+                                <span class="text-white font-medium"> Name Admin :
+                                    <?= $data['admin_single']['username'] ?></span>
                             </a>
                         </li>
                 </div>

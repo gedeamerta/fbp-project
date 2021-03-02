@@ -20,8 +20,9 @@
 </script>
 <script src="<?= baseurl ?>/assets/admin-assets/js/pages/dashboards/dashboard1.js"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js">
+</script>
 <script>
 $(document).ready(function() {
     $('#packagesTable').DataTable();
