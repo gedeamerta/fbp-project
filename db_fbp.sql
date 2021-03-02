@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 01, 2021 at 07:27 AM
+-- Generation Time: Mar 02, 2021 at 04:12 PM
 -- Server version: 5.7.24
--- PHP Version: 7.4.15
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,14 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
+  `fullname` text NOT NULL,
   `username` varchar(100) NOT NULL,
+  `email` varchar(225) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `fullname`, `username`, `email`, `password`) VALUES
+(1, '', 'admin', '', '$2y$10$J2DHjSV7d/LGXAgBpn92XuLsKIzCXMVF3uRShuXC6oRHtWUmvttCm');
 
 -- --------------------------------------------------------
 
@@ -109,17 +118,19 @@ CREATE TABLE `documentation` (
 CREATE TABLE `packages` (
   `id` int(11) NOT NULL,
   `title_packages` text NOT NULL,
-  `slug` varchar(10) NOT NULL,
+  `slug` varchar(100) NOT NULL,
   `descriptions` text NOT NULL,
-  `photos` varchar(255) NOT NULL
+  `photos` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `packages`
 --
 
-INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`) VALUES
-(1, 'Packages 1', 'packages-1', 'The first package is a starting package suitable for beginners who want to try a healthy lifestyle. By exercising and fulfilling good nutritional needs will be discussed in the first package', 'packages-1.png');
+INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`, `created_at`) VALUES
+(1, 'Packages Gym', 'packages-gym', 'Test', 'kintil untuk menyambar.jpg', '2021-03-02 21:18:32'),
+(2, 'Packages Food', 'packages-food', 'test etst', '', '2021-03-02 23:51:06');
 
 -- --------------------------------------------------------
 
@@ -129,19 +140,11 @@ INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`
 
 CREATE TABLE `package_details` (
   `id` int(11) NOT NULL,
-  `title_package_details` text NOT NULL,
-  `description_details` text NOT NULL,
-  `photo_details` varchar(255) NOT NULL,
-  `slug_packages` varchar(10) NOT NULL
+  `title_package` text NOT NULL,
+  `descriptions` text NOT NULL,
+  `photos` varchar(255) NOT NULL,
+  `id_packages` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `package_details`
---
-
-INSERT INTO `package_details` (`id`, `title_package_details`, `description_details`, `photo_details`, `slug_packages`) VALUES
-(1, 'Packages Gym', 'The first package is a starting package suitable for beginners who want to try a healthy lifestyle. By exercising and fulfilling good nutritional needs will be discussed in the first package The first package is a starting package suitable for beginners who want to try a healthy lifestyle. By exercising and fulfilling good nutritional needs will be discussed in the first package', 'man-pull2.jpg', 'packages-1'),
-(2, 'Packages Work Out', 'The first package is a starting package suitable for beginners who want to try a healthy lifestyle. By exercising and fulfilling good nutritional needs will be discussed in the first package The first package is a starting package suitable for beginners who want to try a healthy lifestyle. By exercising and fulfilling good nutritional needs will be discussed in the first package', '', 'packages-1');
 
 -- --------------------------------------------------------
 
@@ -158,54 +161,27 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `testimonials`
---
-
-INSERT INTO `testimonials` (`id`, `name`, `job`, `descriptions`, `photos`) VALUES
-(1, 'Setya Herawan', 'Personal Trainer', 'Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer\r\nLorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer', 'coach.png'),
-(2, 'Gede Amerta', 'Programmer', 'Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer', '');
-
---
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `admins`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `after_clients`
---
-ALTER TABLE `after_clients`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `before_clients`
---
-ALTER TABLE `before_clients`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `coach_profile`
---
-ALTER TABLE `coach_profile`
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `packages`
 --
 ALTER TABLE `packages`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `slug` (`slug`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `package_details`
 --
 ALTER TABLE `package_details`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `slug_packages` (`slug_packages`);
+  ADD KEY `id_packages` (`id_packages`);
 
 --
 -- Indexes for table `testimonials`
@@ -218,56 +194,28 @@ ALTER TABLE `testimonials`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `admins`
 --
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `after_clients`
---
-ALTER TABLE `after_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `before_clients`
---
-ALTER TABLE `before_clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `coach_profile`
---
-ALTER TABLE `coach_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `package_details`
 --
 ALTER TABLE `package_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `package_details`
---
-ALTER TABLE `package_details`
-  ADD CONSTRAINT `package_details_ibfk_1` FOREIGN KEY (`slug_packages`) REFERENCES `packages` (`slug`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
