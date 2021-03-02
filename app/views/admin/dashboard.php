@@ -46,28 +46,34 @@
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
-                <table id="packagesTable" class="display">
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Fullname</th>
-                            <th>Email</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($data['admin'] as $adminData) : ?>
-                        <tr>
-                            <td><?= $adminData['fullname'] ?></td>
-                            <td><?= $adminData['username'] ?></td>
-                            <td><?= $adminData['email'] ?></td>
-                            <td><a href="<?= baseurl ?>/admin/delete/<?= $adminData['id'] ?>"><i
-                                        class="fas fa-trash-alt" style="color: red;"></i></a></td>
-                        </tr>
-                        <?php endforeach; ?>
+                <div class="table-responsive">
+                    <table id="packagesTable" class="display table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fullname</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($data['admin'] as $adminData) : ?>
+                            <tr>
+                                <td><?= $adminData['fullname'] ?></td>
+                                <td><?= $adminData['username'] ?></td>
+                                <td><?= $adminData['email'] ?></td>
+                                <td>
+                                    <a href="<?= baseurl ?>/admin/delete/<?= $adminData['id']?>"
+                                        onclick="return confirm('Are u sure want to delete')">
+                                        <i class="fas fa-trash-alt" style="color: red;"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

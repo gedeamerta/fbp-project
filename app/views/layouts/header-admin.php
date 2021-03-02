@@ -12,6 +12,9 @@
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title><?= $data['title']?> </title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= baseurl; ?>/assets/style/font-awesome/css/all.css" />
@@ -114,8 +117,7 @@
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
-                            <a href="<?= baseurl ?>/admin/setOut" class="btn d-grid btn-danger text-white"
-                                target="_blank">
+                            <a href="<?= baseurl ?>/admin/setOut" class="btn d-grid btn-danger text-white">
                                 Log Out</a>
                         </li>
                     </ul>

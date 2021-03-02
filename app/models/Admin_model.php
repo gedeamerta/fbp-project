@@ -123,6 +123,14 @@ class Admin_model
         }
     }
 
+    public function deleteAdmin($id) {
+        $query = "DELETE FROM admins WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
     public function logOut()
     {
         session_destroy();

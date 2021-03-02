@@ -12,22 +12,22 @@ class Admin extends Controller
                 Flasher::setFlash('success', 'Success Login');
                 header("Location: ". baseurl . "/admin/dashboard");
             }else {
-                Flasher::setFlash('error', 'Failed Login');
-                header("Location: ". baseurl . "/admin");
+                Flasher::setFlash('error', 'Username or Password is wrong');
+                header("Location: ". baseurl . "/admin/index");
             }
         }
     }
 
     public function dashboard()
     {
+        $data['title'] = 'Dashboard Admin'; 
+        $data['set_active'] = 'dashboard'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['admin'] = $this->model("Admin_model")->getAdmin();
+        
         if(!isset($_SESSION['login_admin'])){
-            $data['title'] = 'Login Admin';
-            $this->view('admin/login',$data);  
+            header("Location: " . baseurl . "/admin/index");
         }else {
-            $data['title'] = 'Dashboard Admin'; 
-            $data['set_active'] = 'dashboard'; 
-            $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
-            $data['admin'] = $this->model("Admin_model")->getAdmin();
             $this->view('layouts/header-admin', $data);
             $this->view('admin/dashboard', $data);
             $this->view('layouts/footer-admin',$data);
@@ -57,6 +57,17 @@ class Admin extends Controller
         }
     }
 
+    public function delete($id)
+    {
+        if ($this->model('Admin_model')->deleteAdmin($id) > 0) {
+            Flasher::setFlash('success', 'Success Delete Data Admin');
+            header("Location: " . baseurl . "/admin/dashboard");
+        } else {
+            Flasher::setFlash('error', 'Fail Delete Data Admin');
+            header("Location: " . baseurl . "/admin/dashboard");
+        }
+    }
+
                 
     public function packages()
     {
@@ -64,9 +75,41 @@ class Admin extends Controller
         $data['set_active'] = 'packages'; 
         $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
         $data['packages'] = $this->model("Packages_model")->getAllPackages();
-        $this->view('layouts/header-admin', $data);
-        $this->view('admin/packages', $data);
-        $this->view('layouts/footer-admin',$data);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/packages', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function packages_details($id)
+    {
+        $data['title'] = 'Dashboard Packages Details';
+        $data['set_active'] = 'packages'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['packages_single'] = $this->model("Packages_model")->getPackagesId($id);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/packages-update', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function updatePackages($id)
+    {
+        if ($this->model('Packages_model')->updateDataPackages($id) > 0) {
+            Flasher::setFlash('success', 'Success Update Data Packages');
+            header("Location: " . baseurl . "/admin/dashboard");
+        } else {
+            Flasher::setFlash('error', 'Fail Update Data Packages');
+            header("Location: " . baseurl . "/admin/dashboard");
+        }
     }
 
     public function add_packages()

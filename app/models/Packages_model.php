@@ -92,66 +92,81 @@ class Packages_model {
                     alert("Packages has been added")
             </script>';
         }else{
-                $query = "INSERT INTO packages (title_packages, slug, descriptions, photos, created_at ) VALUES (:title_packages, :slug, :descriptions, :photos, :created_at)";
+                $query = "INSERT INTO packages (title_packages, slug, descriptions, photos ) VALUES (:title_packages, :slug, :descriptions, :photos)";
                 $this->db->query($query);
                 $this->db->bind("title_packages", $title_packages);
                 $this->db->bind("slug", $slug);
                 $this->db->bind("descriptions", $descriptions);
                 $this->db->bind("photos", $_FILES['photos']['name']);
-                $this->db->bind("created_at", date("d-m-Y"));
                 $this->db->execute();
                 return $this->db->rowCount();
             }
+    }
+
+    public function updateDataPackages($id)
+    {   
+        var_dump($_POST);die;
+        //to find image location
+        $targetDir =  __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "assets" . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
+        $targetFile = $targetDir . basename($_FILES["photos"]["name"]);
+        $extension  = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $uploadOk   = 1;
+
+        $check = getimagesize($_FILES["photos"]["tmp_name"]);
+        if ($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
         }
 
-        public function updatePackages($data)
-        {   
-            $username = $data['username'];
-            //validate password
-            $uppercase =  preg_match('@[A-Z]@', $data['password']);
-            $lowercase =  preg_match('@[a-z]@', $data['password']);
-            $number =  preg_match('@[0-9]@', $data['password']);
-    
-    
-            if (!$uppercase || !$lowercase || !$number || strlen($data['password']) < 8) {
-                echo '<script>
-                        alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number.");
-                        setTimeout(function() {
-                            window.location.href="dashboard";
-                        }, 1000);
-                    </script>';
+        if ($extension != "jpg" && $extension != "png" && $extension != "jpeg") {
+            echo "Sorry, only JPG, JPEG, and PNG images are allowed.";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        } else {
+            if (move_uploaded_file($_FILES["photos"]["tmp_name"], $targetFile)) {
+                echo "The file " . basename($_FILES["photos"]["name"]) . " has been uploaded.";
             } else {
-                if ($data['password'] !== $data['password2']) {
-                    echo
-                        '<script>
-                            alert("Your Password is invalid");
-                            setTimeout(function() {
-                                window.location.href="dashboard";
-                            }, 1000);
-                        </script>';
-                    exit;
-                }else {
-                    $query = "UPDATE admins SET username = :username , password = :password WHERE id = :id";
-                    $id_admin = $_SESSION['id_admin'];
-                    $this->db->query($query);
-                    $this->db->bind('username', $username);
-                    $this->db->bind('id', $id_admin);
-                    $this->db->bind('password', password_hash($data['password'], PASSWORD_DEFAULT));
-                    $this->db->execute();
-                    return $this->db->rowCount();
-                }
+                echo "Sorry, there was an error uploading your file.";
             }
         }
+
+        $title_package = $_POST['title_packages'];
+        $slug = $this->slugify($title_package);
+        $descriptions = $_POST['descriptions'];
+
+        $query = "UPDATE packages SET title_packages = :title_packages, slug = :slug, descriptions = :descriptions, photos = :photos WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('title_package', $title_package);
+        $this->db->bind('slug', $slug);
+        $this->db->bind('descriptions', $descriptions);
+        $this->db->bind('photos', $_FILES['photos']['name']);
+        $this->db->bind('id ', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
     
-        public function getPackages()
-        {
-            $this->db->query("SELECT * FROM packages");
-            return $this->db->resultAll();
-        }
-    
-        public function getDetailsPackages($slug) {
-            $this->db->query("SELECT * FROM package_details INNER JOIN packages ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
-            $this->db->bind('slug_packages', $slug);
-            return $this->db->resultAll();
-        }
+    public function getPackages()
+    {
+        $this->db->query("SELECT * FROM packages");
+        return $this->db->resultAll();
+    }
+
+    public function getPackagesId($id)
+    {
+        $this->db->query('SELECT * FROM packages WHERE id = :id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
+
+    public function getDetailsPackages($slug) {
+        $this->db->query("SELECT * FROM package_details INNER JOIN packages ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
+        $this->db->bind('slug_packages', $slug);
+        return $this->db->resultAll();
+    }
 }
