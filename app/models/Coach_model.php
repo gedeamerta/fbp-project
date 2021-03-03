@@ -1,5 +1,5 @@
 <?php
-class Packages_model {
+class Coach_model {
     private $db;
 
     public function __construct()
@@ -8,65 +8,32 @@ class Packages_model {
     }
 
     
-    public function getPackagesBy($param, $value)
+    public function getCoachBy($param, $value)
     {
         if (isset($param) && isset($value)) {
-            $this->db->query("SELECT * FROM packages WHERE $param = :$param");
+            $this->db->query("SELECT * FROM coach_profile WHERE $param = :$param");
             $this->db->bind($param, $value);
             return $this->db->single();
         }
     }
-    public function getAllPackages()
+    public function getAllCoach()
     {
-        $this->db->query('SELECT * FROM packages');
+        $this->db->query('SELECT * FROM coach_profile');
         return $this->db->resultAll();
     }
 
-    public function getPackagesId($id)
+    public function getCoachId($id)
     {
-        $this->db->query('SELECT * FROM packages WHERE id = :id');
+        $this->db->query('SELECT * FROM coach_profile WHERE id = :id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
-
-    public function getDetailsPackages($slug) {
-        $this->db->query("SELECT * FROM package_details INNER JOIN packages ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
-        $this->db->bind('slug_packages', $slug);
-        return $this->db->resultAll();
-    }
     
-    //slug the category
-    public static function slugify($text)
+
+    public function addCoach($data)
     {
-        // replace non letter or digits by -
-        $text = preg_replace('~[^\pL\d]+~u', '-', $text);
-
-        // transliterate
-        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
-
-        // remove unwanted characters
-        $text = preg_replace('~[^-\w]+~', '', $text);
-
-        // trim
-        $text = trim($text, '-');
-
-        // remove duplicate -
-        $text = preg_replace('~-+~', '-', $text);
-
-        // lowercase
-        $text = strtolower($text);
-
-        if (empty($text)) {
-            return 'n-a';
-        }
-
-        return $text;
-    }
-
-    public function addPackages($data)
-    {
-        $title_packages = htmlspecialchars($data['title_packages']);
-        $slug = $this->slugify($title_packages);
+        $name = htmlspecialchars($data['name']);
+        $job = htmlspecialchars($data['job']);
         $descriptions = htmlspecialchars($data['descriptions']);
         
         //to find image location
@@ -99,22 +66,19 @@ class Packages_model {
             }
         }
         
-        $query = "INSERT INTO packages (title_packages, slug, descriptions, photos ) VALUES (:title_packages, :slug, :descriptions, :photos)";
+        $query = "INSERT INTO coach_profile (name, job, photos, descriptions ) VALUES (:name, :job, :photos, :descriptions)";
         $this->db->query($query);
-        $this->db->bind("title_packages", $title_packages);
-        $this->db->bind("slug", $slug);
-        $this->db->bind("descriptions", $descriptions);
+        $this->db->bind("name", $name);
+        $this->db->bind("job", $job);
         $this->db->bind("photos", $_FILES['photos']['name']);
+        $this->db->bind("descriptions", $descriptions);
         $this->db->execute();
         return $this->db->rowCount();
     }
 
-    public function updateDataPackages($id)
+    public function updateDataCoach($id)
     {  
-        $title_packages = htmlspecialchars($_POST['title_packages']);
-        $slug = $this->slugify($title_packages);
-        $descriptions = htmlspecialchars($_POST['descriptions']);
-
+        $name = htmlspecialchars($_POST['name']);
 
         if(isset($_FILES['photos']['name']) && $_FILES['photos']['error'] <= 0) {
             //to find image location
@@ -146,29 +110,27 @@ class Packages_model {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-            $query = "UPDATE packages SET title_packages= :title_packages, slug= :slug, descriptions= :descriptions, photos= :photos WHERE id = :id";
+
+            $query = "UPDATE coach_profile SET name= :name, photos= :photos WHERE id = :id";
             $this->db->query($query);
-            $this->db->bind("title_packages", $title_packages);
-            $this->db->bind("slug", $slug);
-            $this->db->bind("descriptions", $descriptions);
+            $this->db->bind("name", $name);
             $this->db->bind("photos", $_FILES['photos']['name']);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }else {
-            $query = "UPDATE packages SET title_packages= :title_packages, slug= :slug, descriptions= :descriptions WHERE id = :id";
+            $query = "UPDATE coach_profile SET name= :name WHERE id = :id";
             $this->db->query($query);
-            $this->db->bind("title_packages", $title_packages);
-            $this->db->bind("slug", $slug);
-            $this->db->bind("descriptions", $descriptions);
+            $this->db->bind("name", $name);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }
+
     }
 
-    public function deleteDataPackages($id) {
-        $query = "DELETE FROM packages WHERE id = :id";
+    public function deleteDataCoach($id) {
+        $query = "DELETE FROM coach_profile WHERE id = :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
         $this->db->execute();

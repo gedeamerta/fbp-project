@@ -53,12 +53,24 @@
         height: 30vh;
     }
 
-
     @media all and (max-width: 320px) {
         .logo-footer {
             margin-left: 3em;
             padding-top: 20em;
         }
+    }
+
+    .image--cover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px !important;
+        height: 150px;
+        border-radius: 50%;
+        margin: 20px;
+
+        object-fit: cover;
+        object-position: center right;
     }
     </style>
 
@@ -83,7 +95,7 @@
                         <div class="underline-bar"></div>
                     </li>
                     <li class="nav-item <?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
-                        <a class="nav-link" href="<?= baseurl; ?>/services">Our Services</a>
+                        <a class="nav-link" href="<?= baseurl; ?>/home/services">Our Services</a>
                         <div class="underline-bar"></div>
                     </li>
                     <li class="nav-item <?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">

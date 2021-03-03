@@ -15,32 +15,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($data['packages'] as $packages) : ?>
+                            <?php foreach($data['packages_details'] as $details) : ?>
                             <tr>
-                                <td><?= $packages['title_packages'] ?></td>
-                                <td><?= $packages['descriptions'] ?></td>
+                                <td><?= $details['title_packages_details'] ?></td>
+                                <td><?= $details['descriptions_details'] ?></td>
                                 <td>
-                                    <?php if($packages['photos']) : ?>
-                                    <img src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>"
+                                    <?php if($details['photos']) : ?>
+                                    <img src="<?= baseurl ?>/assets/images/<?= $details['photos_details'] ?>"
                                         style="width: 100%" alt="">
                                     <?php else : ?>
                                     <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 100%" alt="" />
                                     <?php endif; ?>
                                 </td>
-                                <td> <a href=" <?= baseurl ?>/admin/deletePackages/<?= $packages['id']?>"
+                                <td>
+                                    <a href=" <?= baseurl ?>/admin/deletePackagesDetails/<?= $details['slug_details']?>"
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
-                                    <a href="<?= baseurl ?>/admin/packages_update/<?= $packages['id'] ?>"><i
+                                    <a
+                                        href="<?= baseurl ?>/admin/packages_details_update/<?= $details['slug_details'] ?>"><i
                                             class="far fa-edit"></i>
-                                    </a>
-                                    <a href="<?= baseurl ?>/admin/packages_details/<?= $packages['id'] ?>"><i
-                                            class="far fa-plus-square" style="color: red"></i>
                                     </a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
-
                         </tbody>
                     </table>
                 </div>
@@ -51,29 +49,39 @@
     <!-- Form Packages -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <h1>Add Packages</h1>
+            <h1>Add Packages Details</h1>
             <div class="white-box">
                 <?php Flasher::flash();  ?>
-                <form method="post" action="<?= baseurl ?>/admin/add_packages" enctype="multipart/form-data">
+                <form method="post" action="<?= baseurl ?>/admin/add_packages_details" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Title Pakages</label>
-                                <input type="text" class="form-control" name="title_packages"
+                                <input type="text" class="form-control" name="title_packages_details"
                                     placeholder="Title Packages" required />
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Descriptions</label>
-                                <input type="text" class="form-control" name="descriptions" placeholder="Descriptions"
-                                    required />
+                                <input type="text" class="form-control" name="descriptions_details"
+                                    placeholder="Descriptions" required />
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Select Packages</label>
+                                <select class="form-control" name="id_packages" id="">
+                                    <option value="<?= $data['selected_packages']['id'] ?>" selected>
+                                        <?= $data['selected_packages']['title_packages'] ?>
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Photos</label>
-                                <input type="file" class="form-control" name="photos" required />
+                                <input type="file" class="form-control" name="photos_details" />
                             </div>
                         </div>
                     </div>

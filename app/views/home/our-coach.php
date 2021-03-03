@@ -34,6 +34,47 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+            <h2 class="text-title">
+                <span class="underline-title-text">Team Work</span>
+            </h2>
+            <h2 class="subtitle-text">
+                We Work Together, to help you all
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <?php foreach($data['coach'] as $coach) : ?>
+        <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center d-flex" data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+            <div class="card-pages-services card mt-3">
+                <div class="row no-gutters">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <?php if($coach['photos']) : ?>
+                        <img class="mx-auto card-img-top image--cover"
+                            src="<?= baseurl ?>/assets/images/<?= $coach['photos']?>" alt="">
+                        <?php else : ?>
+                        <img class="mt-0 image--cover" src="<?= baseurl ?>/assets/images/default.jpg" alt="" />
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card-body card-body-packages">
+                            <h3 class="card-title title-packages-card text-center" style="margin: 0;">
+                                <?= $coach['name']?></h3>
+                            <p class="card-text subtitle-packages text-center">
+                                <?= $coach['job']?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+</div>
 <!-- Banner End -->
 
 <!-- FBP Pic Start -->

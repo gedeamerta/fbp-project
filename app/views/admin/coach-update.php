@@ -1,24 +1,24 @@
 <div class="container-fluid">
     <div class="row">
+        <h1>Update Data Coach</h1>
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
                 <?php Flasher::flash();  ?>
-                <form method="post" action="<?= baseurl ?>/admin/updatePackages/<?= $data['packages_single']['id'] ?>"
+                <form method="post" action="<?= baseurl ?>/admin/updateCoach/<?= $data['coach_single']['id'] ?>"
                     enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Title Packages</label>
-                                <input type="text" class="form-control" name="title_packages"
-                                    placeholder="Title Packages"
-                                    value="<?= $data['packages_single']['title_packages'] ?>" required />
+                                <label>Fullname</label>
+                                <input type="text" class="form-control" name="name" placeholder="Fullname"
+                                    value="<?= $data['coach_single']['name'] ?>" required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Descriptions</label>
-                                <input type="text" class="form-control" name="descriptions" placeholder="Descriptions"
-                                    value="<?= $data['packages_single']['descriptions'] ?>" required />
+                                <label>Position</label>
+                                <input type="text" class="form-control" name="job" placeholder="Position"
+                                    value="<?= $data['coach_single']['job'] ?>" required />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="update ml-auto mr-auto">
                             <button type="submit" class="btn btn-primary btn-round">
-                                Update Packages
+                                Update Coach
                             </button>
                         </div>
                     </div>

@@ -42,10 +42,10 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="card-body card-body-packages">
                             <h5 class="card-title title-packages-card" style="margin-top: 0;">
-                                <?= $packages_details['title_package_details']?>
+                                <?= $packages_details['title_packages_details']?>
                             </h5>
                             <p class="card-text subtitle-packages">
-                                <?= $packages_details['description_details']?>
+                                <?= $packages_details['descriptions_details']?>
                             </p>
                             <a href="https://api.whatsapp.com/send?phone=6287861250115"> Contact Now<i
                                     class="fas fa-arrow-right" style="margin-left: 5px; padding-top: 2px"></i></a>

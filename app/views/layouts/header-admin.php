@@ -84,21 +84,21 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="<?= baseurl ?>/admin/packages" aria-expanded="false">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Our Services</span>
+                                <i class="fas fa-archive"></i>
+                                <span class="hide-menu">Packages</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
-                                aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Our Coach</span>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="<?= baseurl ?>/admin/coach" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                <span class="hide-menu">Coach</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <i class="fas fa-hourglass-start"></i>
                                 <span class="hide-menu">Before & After</span>
                             </a>
                         </li>

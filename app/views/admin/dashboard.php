@@ -81,6 +81,7 @@
     <!-- Form Admin -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <h1>Add Admin</h1>
             <div class="white-box">
                 <?php Flasher::flash();  ?>
                 <form method="post" action="<?= baseurl ?>/admin/add_admin">
@@ -88,31 +89,35 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Fullname</label>
-                                <input type="text" class="form-control" name="fullname" placeholder="Fullname" />
+                                <input type="text" class="form-control" name="fullname" placeholder="Fullname"
+                                    required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" name="username" placeholder="Username" />
+                                <input type="text" class="form-control" name="username" placeholder="Username"
+                                    required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" class="form-control" name="email" placeholder="Email" />
+                                <input type="text" class="form-control" name="email" placeholder="Email" required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password" placeholder="Password" />
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    required />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Re-type Password</label>
-                                <input type="password" class="form-control" name="password2" placeholder="Password" />
+                                <input type="password" class="form-control" name="password2" placeholder="Password"
+                                    required />
                             </div>
                         </div>
                     </div>
@@ -129,6 +134,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <h1>Update Admin</h1>
             <div class="white-box">
                 <form method="post" action="<?= baseurl ?>/admin/update">
                     <div class="row">
@@ -136,19 +142,21 @@
                             <div class="form-group">
                                 <label>Username</label>
                                 <input type="text" class="form-control" name="username" placeholder="Username"
-                                    value="<?= $data['admin_single']['username']?>" />
+                                    value="<?= $data['admin_single']['username']?>" required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" />
+                                <input type="password" name="password" class="form-control" placeholder="Password"
+                                    required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Re-type Password</label>
-                                <input type="password" name="password2" class="form-control" placeholder="Password" />
+                                <input type="password" name="password2" class="form-control" placeholder="Password"
+                                    required />
                             </div>
                         </div>
                     </div>

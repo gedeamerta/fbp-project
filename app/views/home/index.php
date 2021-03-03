@@ -64,7 +64,7 @@
 
         <div class="card-deck card-services-container col-lg-3 col-md-12">
             <div class="card card-services" data-aos="fade-up" data-aos-duration="1100">
-                <img src="<?= baseurl ?>/assets/images/req-places.png"" class=" card-img-top mx-auto" alt="..." />
+                <img src="<?= baseurl ?>/assets/images/req-places.png" class="card-img-top mx-auto" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title text-title-card">Online Coaching</h5>
                 </div>

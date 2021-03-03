@@ -7,11 +7,35 @@ class Home extends Controller
         $data['set_active'] = 'index';
 
         $data['getTesti']= $this->model('Home_model')->getTesti();
+        $data['getCoach']= $this->model('Coach_model')->getAllCoach();
         
         $this->view('layouts/header', $data);
         $this->view('home/index', $data);
         $this->view('layouts/footer',$data);
 
+    }
+
+    public function services()
+    {
+        $data['title'] = 'Future Body Project - Services'; 
+        $data['set_active'] = 'our-services'; 
+        $data['packages'] = $this->model("Packages_model")->getAllPackages();
+          
+        $this->view('layouts/header', $data);
+        $this->view('home/packages', $data);
+        $this->view('layouts/footer',$data);
+
+    }
+
+    public function details_packages($slug)
+    {
+        $data['title'] = 'Future Body Project - Packages Details'; 
+        $data['set_active'] = 'our-services'; 
+        $data['packages_details'] = $this->model("Packages_model")->getDetailsPackages($slug);
+        
+        $this->view('layouts/header', $data);
+        $this->view('home/details-packages', $data);
+        $this->view('layouts/footer',$data);
     }
 
     public function result()
@@ -31,6 +55,7 @@ class Home extends Controller
     {
         $data['title'] = 'Future Body Project - Coach'; 
         $data['set_active'] = 'our-coach'; 
+        $data['coach'] = $this->model("Coach_model")->getAllCoach();
         
         $this->view('layouts/header', $data);
         $this->view('home/our-coach', $data);

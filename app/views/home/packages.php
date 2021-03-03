@@ -36,8 +36,12 @@
             <div class="card-pages-services card mt-3" style="max-width: 80%">
                 <div class="row no-gutters">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <img class="mt-0" src="<?= baseurl ?>/assets/images/packages-1.png" alt="..."
-                            style="width: 100%" />
+                        <?php if($packages['photos']) : ?>
+                        <img class="mt-0" src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>" alt=""
+                            style="width: 100%">
+                        <?php else : ?>
+                        <img class="mt-0" src="<?= baseurl ?>/assets/images/default.jpg" alt="" style="width: 100%" />
+                        <?php endif; ?>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="card-body card-body-packages">
@@ -45,7 +49,7 @@
                             <p class="card-text subtitle-packages">
                                 <?= $packages['descriptions']?>
                             </p>
-                            <a href="<?= baseurl?>/services/details/<?= $packages['slug']?>">See Details<i
+                            <a href="<?= baseurl?>/home/details-packages/<?= $packages['slug']?>">See Details<i
                                     class="fas fa-arrow-right" style="margin-left: 5px; padding-top: 2px"></i></a>
                         </div>
                     </div>
