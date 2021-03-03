@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 02, 2021 at 04:12 PM
+-- Generation Time: Mar 03, 2021 at 08:33 AM
 -- Server version: 5.7.24
--- PHP Version: 7.4.12
+-- PHP Version: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `fullname` text NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(225) NOT NULL,
+  `username` varchar(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,7 +40,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `fullname`, `username`, `email`, `password`) VALUES
-(1, '', 'admin', '', '$2y$10$J2DHjSV7d/LGXAgBpn92XuLsKIzCXMVF3uRShuXC6oRHtWUmvttCm');
+(1, '', 'admin', '', 'admin123'),
+(2, 'I Gede Surya Amerta', 'gdamerta', 'amerta213bali@gmail.com', '$2y$10$tyA0mL/85t/iYWzBbIWpO.Cz7yfcWRW7Uqvlt.37sTwqS2jLXkxIi'),
+(3, 'Gede Dilan ', 'dilan', 'amerta213bali@gmail.com', '$2y$10$DTbCF.kWPI0zwT9P0Nf8VevJ5hK.BCkzi5iImTT4zczpsa/z9f9s.');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE `after_clients` (
 
 INSERT INTO `after_clients` (`id`, `name`, `job`, `descriptions`, `photos`) VALUES
 (1, ' Dewi Lestari', 'Legal Contract of KarmaResort', 'This is me now, many changes can be seen, starting to erode fat and starting to build muscle, all types of exercises given have a very drastic effect on my body', 'after-1.JPG'),
-(2, '                                Nyoman Sarja Wiryadi', '                                Photographer', '                                All of my struggles and hard work have paid off following\r\n                                the program at FBP, it\r\n                                has really changed my mindset of going through this life,\r\n                                with this, I increasingly realize that exercising is not to\r\n                                make us healthy but to make us think healthier and more\r\n                                clearly.', 'after-man-1.JPG');
+(2, 'Nyoman Sarja Wiryadi', 'Photographer', 'All of my struggles and hard work have paid off following\r\n                                the program at FBP, it\r\n                                has really changed my mindset of going through this life,\r\n                                with this, I increasingly realize that exercising is not to\r\n                                make us healthy but to make us think healthier and more\r\n                                clearly.', 'after-man-1.JPG');
 
 -- --------------------------------------------------------
 
@@ -94,9 +96,19 @@ INSERT INTO `before_clients` (`id`, `name`, `job`, `descriptions`, `photos`) VAL
 
 CREATE TABLE `coach_profile` (
   `id` int(11) NOT NULL,
-  `photos` varchar(255) NOT NULL,
-  `descriptions` text NOT NULL
+  `name` varchar(100) NOT NULL,
+  `job` varchar(100) NOT NULL,
+  `photos` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `coach_profile`
+--
+
+INSERT INTO `coach_profile` (`id`, `name`, `job`, `photos`) VALUES
+(3, 'Ary Pradnya 1', 'Assisten ', 'before-1.JPG'),
+(4, 'Gede Amerta 2', 'Food Program', 'before-2.JPG'),
+(5, 'Ary Pradnya', 'Work Out Program', 'packages-2.png');
 
 -- --------------------------------------------------------
 
@@ -106,7 +118,8 @@ CREATE TABLE `coach_profile` (
 
 CREATE TABLE `documentation` (
   `id` int(11) NOT NULL,
-  `photos` varchar(255) NOT NULL
+  `photos` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -121,7 +134,7 @@ CREATE TABLE `packages` (
   `slug` varchar(100) NOT NULL,
   `descriptions` text NOT NULL,
   `photos` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -129,22 +142,35 @@ CREATE TABLE `packages` (
 --
 
 INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`, `created_at`) VALUES
-(1, 'Packages Gym', 'packages-gym', 'Test', 'kintil untuk menyambar.jpg', '2021-03-02 21:18:32'),
-(2, 'Packages Food', 'packages-food', 'test etst', '', '2021-03-02 23:51:06');
+(4, 'Gym Packages 2', 'gym-packages-2', 'Mantap nih', 'pic-fbp-6.JPG', '2021-03-03 01:29:59'),
+(10, 'Work Out Packages 2', 'work-out-packages-2', 'Mantap nih', 'pic-fbp-3.jpeg', '2021-03-03 07:22:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_details`
+-- Table structure for table `packages_details`
 --
 
-CREATE TABLE `package_details` (
+CREATE TABLE `packages_details` (
   `id` int(11) NOT NULL,
-  `title_package` text NOT NULL,
-  `descriptions` text NOT NULL,
-  `photos` varchar(255) NOT NULL,
+  `title_packages_details` text NOT NULL,
+  `slug_details` varchar(255) NOT NULL,
+  `descriptions_details` text NOT NULL,
+  `photos_details` varchar(255) NOT NULL,
   `id_packages` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `packages_details`
+--
+
+INSERT INTO `packages_details` (`id`, `title_packages_details`, `slug_details`, `descriptions_details`, `photos_details`, `id_packages`) VALUES
+(1, 'Leg Day', 'leg-day', 'Mantap nih', 'banner-services-3.jpg', 7),
+(2, 'Upper Body', 'upper-body', 'Mantap nih', 'banner-services-2.jpg', 7),
+(4, 'Body Day', 'body-day', 'sabi Lah', 'banner-services-1.jpg', 7),
+(5, 'Sleep Day', 'sleep-day', 'sabi Lah', 'after-1.JPG', 7),
+(6, 'Sleep Day', 'sleep-day', 'sabi Lah', 'packages-2.png', 4),
+(8, 'Lego Body', 'lego-body', 'sabi Lah', 'banner-services-2.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -161,6 +187,14 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `job`, `descriptions`, `photos`) VALUES
+(1, 'Setya Herawan', 'Personal Trainer', 'Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer\r\nLorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer', 'coach.png'),
+(2, 'Gede Amerta', 'Programmer', 'Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer', '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -171,17 +205,35 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `packages`
+-- Indexes for table `after_clients`
 --
-ALTER TABLE `packages`
+ALTER TABLE `after_clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `package_details`
+-- Indexes for table `before_clients`
 --
-ALTER TABLE `package_details`
+ALTER TABLE `before_clients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `coach_profile`
+--
+ALTER TABLE `coach_profile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `packages`
+--
+ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_packages` (`id_packages`);
+  ADD KEY `slug` (`slug`);
+
+--
+-- Indexes for table `packages_details`
+--
+ALTER TABLE `packages_details`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `testimonials`
@@ -197,25 +249,43 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `after_clients`
+--
+ALTER TABLE `after_clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `before_clients`
+--
+ALTER TABLE `before_clients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `coach_profile`
+--
+ALTER TABLE `coach_profile`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `package_details`
+-- AUTO_INCREMENT for table `packages_details`
 --
-ALTER TABLE `package_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `packages_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
