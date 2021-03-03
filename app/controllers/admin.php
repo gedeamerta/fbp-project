@@ -58,9 +58,9 @@ class Admin extends Controller
         }
     }
 
-    public function delete($id)
+    public function delete($slug)
     {
-        if ($this->model('Admin_model')->deleteAdmin($id) > 0) {
+        if ($this->model('Admin_model')->deleteAdmin($slug) > 0) {
             Flasher::setFlash('success', 'Success Delete Data Admin');
             header("Location: " . baseurl . "/admin/dashboard");
         } else {
@@ -183,16 +183,16 @@ class Admin extends Controller
     {
         if ($this->model('PackagesDetails_model')->addPackagesDetails($_POST) > 0) {
             Flasher::setFlash('success', 'Success Add Packages Details');
-            header("Location: " . baseurl . "/admin/packages");
+            header("Location: " . baseurl . "/admin/packages_details/".$_POST['id_packages']);
         } else {
             Flasher::setFlash('error', 'Fail Add Packages Details');
             header("Location: " . baseurl . "/admin/packages_details");
         }
     }
 
-    public function deletePackagesDetails($slug)
+    public function deletePackagesDetails($id)
     {
-        if ($this->model('PackagesDetails_model')->deleteDataPackages($slug) > 0) {
+        if ($this->model('PackagesDetails_model')->deleteDataPackages($id) > 0) {
             Flasher::setFlash('success', 'Success Delete Data Packages Details');
             header("Location: " . baseurl . "/admin/packages");
         } else {

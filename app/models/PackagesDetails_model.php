@@ -18,8 +18,8 @@ class PackagesDetails_model {
     }
     public function getAllPackagesDetails($id)
     {
-        $this->db->query('SELECT * FROM packages_details INNER JOIN packages ON packages_details.id_packages = packages.id WHERE packages_details.id_packages = :id');
-        $this->db->bind('id', $id);
+        $this->db->query('SELECT packages_details.* FROM packages_details INNER JOIN packages ON packages_details.id_packages = packages.id WHERE packages_details.id_packages = :id_packages');
+        $this->db->bind('id_packages', $id);
         return $this->db->resultAll();
     }
 
@@ -169,10 +169,10 @@ class PackagesDetails_model {
         }
     }
 
-    public function deleteDataPackages($slug) {
-        $query = "DELETE FROM packages_details WHERE slug_details = :slug_details";
+    public function deleteDataPackages($id) {
+        $query = "DELETE FROM packages_details WHERE id = :id";
         $this->db->query($query);
-        $this->db->bind('slug_details', $slug);
+        $this->db->bind('id', $id);
         $this->db->execute();
         return $this->db->rowCount();
     }

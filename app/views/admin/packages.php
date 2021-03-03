@@ -24,7 +24,7 @@
                                     <img src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>"
                                         style="width: 100%" alt="">
                                     <?php else : ?>
-                                    <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 100%" alt="" />
+                                    <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 20%" alt="" />
                                     <?php endif; ?>
                                 </td>
                                 <td> <a href=" <?= baseurl ?>/admin/deletePackages/<?= $packages['id']?>"
@@ -73,7 +73,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Photos</label>
-                                <input type="file" class="form-control" name="photos" required />
+                                <input type="file" class="form-control" name="photos" />
                             </div>
                         </div>
                     </div>

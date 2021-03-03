@@ -79,6 +79,7 @@ class Coach_model {
     public function updateDataCoach($id)
     {  
         $name = htmlspecialchars($_POST['name']);
+        $job = htmlspecialchars($_POST['job']);
 
         if(isset($_FILES['photos']['name']) && $_FILES['photos']['error'] <= 0) {
             //to find image location
@@ -111,17 +112,19 @@ class Coach_model {
                 }
             }
 
-            $query = "UPDATE coach_profile SET name= :name, photos= :photos WHERE id = :id";
+            $query = "UPDATE coach_profile SET name= :name, job = :job photos= :photos WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("name", $name);
+            $this->db->bind("job", $job);
             $this->db->bind("photos", $_FILES['photos']['name']);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }else {
-            $query = "UPDATE coach_profile SET name= :name WHERE id = :id";
+            $query = "UPDATE coach_profile SET name= :name, job=:job WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("name", $name);
+            $this->db->bind("job", $job);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();

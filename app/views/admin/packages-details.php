@@ -20,15 +20,15 @@
                                 <td><?= $details['title_packages_details'] ?></td>
                                 <td><?= $details['descriptions_details'] ?></td>
                                 <td>
-                                    <?php if($details['photos']) : ?>
+                                    <?php if($details['photos_details']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $details['photos_details'] ?>"
                                         style="width: 100%" alt="">
                                     <?php else : ?>
-                                    <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 100%" alt="" />
+                                    <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 50%" alt="" />
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href=" <?= baseurl ?>/admin/deletePackagesDetails/<?= $details['slug_details']?>"
+                                    <a href=" <?= baseurl ?>/admin/deletePackagesDetails/<?= $details['id']?>"
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
@@ -53,6 +53,9 @@
             <div class="white-box">
                 <?php Flasher::flash();  ?>
                 <form method="post" action="<?= baseurl ?>/admin/add_packages_details" enctype="multipart/form-data">
+                    <?php foreach($data['packages_details'] as $details) : ?>
+                    <input type="hidden" name="id_packages" value="<?= $details['id']?>">
+                    <?php endforeach; ?>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

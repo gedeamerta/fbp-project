@@ -53,6 +53,7 @@
                                 <th>Fullname</th>
                                 <th>Username</th>
                                 <th>Email</th>
+                                <th>Level</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -62,15 +63,17 @@
                                 <td><?= $adminData['fullname'] ?></td>
                                 <td><?= $adminData['username'] ?></td>
                                 <td><?= $adminData['email'] ?></td>
+                                <td><?= $adminData['level'] ?></td>
                                 <td>
-                                    <a href="<?= baseurl ?>/admin/delete/<?= $adminData['id']?>"
+                                    <?php if($adminData['level'] == 'co-admin') : ?>
+                                    <a href="<?= baseurl ?>/admin/delete/<?= $adminData['slug']?>"
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
-
                         </tbody>
                     </table>
                 </div>
@@ -85,6 +88,7 @@
             <div class="white-box">
                 <?php Flasher::flash();  ?>
                 <form method="post" action="<?= baseurl ?>/admin/add_admin">
+                    <input type="hidden" value="co-admin" name="level">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">

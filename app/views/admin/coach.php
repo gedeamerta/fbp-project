@@ -30,7 +30,7 @@
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
-                                    <a href="<?= baseurl ?>/admin/coach_update/<?= $coachData['slug'] ?>"><i
+                                    <a href="<?= baseurl ?>/admin/coach_update/<?= $coachData['id'] ?>"><i
                                             class="far fa-edit"></i>
                                     </a>
                                 </td>
