@@ -30,7 +30,12 @@ class Packages_model {
     }
 
     public function getDetailsPackages($slug) {
-        $this->db->query("SELECT * FROM package_details INNER JOIN packages ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
+        $this->db->query("SELECT * FROM packages_details INNER JOIN packages ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
+        $this->db->bind('slug_packages', $slug);
+        return $this->db->resultAll();
+    }
+    public function getPackages($slug) {
+        $this->db->query("SELECT * FROM packages INNER JOIN packages_details ON packages.slug = package_details.slug_packages WHERE package_details.slug_packages = :slug_packages");
         $this->db->bind('slug_packages', $slug);
         return $this->db->resultAll();
     }
