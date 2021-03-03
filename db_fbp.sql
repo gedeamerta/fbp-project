@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 03, 2021 at 08:33 AM
+-- Generation Time: Mar 03, 2021 at 04:01 PM
 -- Server version: 5.7.24
--- PHP Version: 7.4.15
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,19 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `fullname` text NOT NULL,
+  `slug` varchar(100) NOT NULL,
   `username` varchar(10) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `level` enum('master','co-admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `fullname`, `username`, `email`, `password`) VALUES
-(1, '', 'admin', '', 'admin123'),
-(2, 'I Gede Surya Amerta', 'gdamerta', 'amerta213bali@gmail.com', '$2y$10$tyA0mL/85t/iYWzBbIWpO.Cz7yfcWRW7Uqvlt.37sTwqS2jLXkxIi'),
-(3, 'Gede Dilan ', 'dilan', 'amerta213bali@gmail.com', '$2y$10$DTbCF.kWPI0zwT9P0Nf8VevJ5hK.BCkzi5iImTT4zczpsa/z9f9s.');
+INSERT INTO `admins` (`id`, `fullname`, `slug`, `username`, `email`, `password`, `level`) VALUES
+(1, 'future-body-project', '', 'admin', 'fbp@gmail.com', 'admin123', 'master'),
+(5, 'Ary Pradnya Dewi', 'ary-pradnya-dewi', 'arypradnya', 'amertasurya@yahoo.co.id', '$2y$10$eSGaZ8bURBIbl85mJV9h3eggorcyPqnXG3/gVma.7ZwQBMFuBZ9dO', 'co-admin');
 
 -- --------------------------------------------------------
 
@@ -106,9 +107,9 @@ CREATE TABLE `coach_profile` (
 --
 
 INSERT INTO `coach_profile` (`id`, `name`, `job`, `photos`) VALUES
-(3, 'Ary Pradnya 1', 'Assisten ', 'before-1.JPG'),
+(3, 'Gede Dilan', 'Assisten ', 'before-1.JPG'),
 (4, 'Gede Amerta 2', 'Food Program', 'before-2.JPG'),
-(5, 'Ary Pradnya', 'Work Out Program', 'packages-2.png');
+(5, 'Ary Pradnya', 'Work Out', 'packages-2.png');
 
 -- --------------------------------------------------------
 
@@ -142,8 +143,7 @@ CREATE TABLE `packages` (
 --
 
 INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`, `created_at`) VALUES
-(4, 'Gym Packages 2', 'gym-packages-2', 'Mantap nih', 'pic-fbp-6.JPG', '2021-03-03 01:29:59'),
-(10, 'Work Out Packages 2', 'work-out-packages-2', 'Mantap nih', 'pic-fbp-3.jpeg', '2021-03-03 07:22:00');
+(4, 'Gym Packages 2', 'gym-packages-2', 'Mantap nih', 'pic-fbp-6.JPG', '2021-03-03 01:29:59');
 
 -- --------------------------------------------------------
 
@@ -169,8 +169,7 @@ INSERT INTO `packages_details` (`id`, `title_packages_details`, `slug_details`, 
 (2, 'Upper Body', 'upper-body', 'Mantap nih', 'banner-services-2.jpg', 7),
 (4, 'Body Day', 'body-day', 'sabi Lah', 'banner-services-1.jpg', 7),
 (5, 'Sleep Day', 'sleep-day', 'sabi Lah', 'after-1.JPG', 7),
-(6, 'Sleep Day', 'sleep-day', 'sabi Lah', 'packages-2.png', 4),
-(8, 'Lego Body', 'lego-body', 'sabi Lah', 'banner-services-2.jpg', 4);
+(13, 'Body Upper', 'body-upper', 'asek mantap', 'banner-services-3.jpg', 4);
 
 -- --------------------------------------------------------
 
@@ -249,7 +248,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `after_clients`
@@ -273,13 +272,13 @@ ALTER TABLE `coach_profile`
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `packages_details`
 --
 ALTER TABLE `packages_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
