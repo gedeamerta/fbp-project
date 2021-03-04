@@ -73,6 +73,112 @@
         object-position: center right;
     }
 
+    /* // Footer */
+    .footer {
+        padding-top: 15em;
+    }
+
+    .footer .column .title {
+        font-weight: 800;
+        font-size: 26px;
+        color: #000;
+    }
+
+    .footer .column ul a {
+        text-decoration: none;
+        font-size: 20px;
+        color: gray;
+        transition: 0.5s;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 330px) {
+        .footer {
+            padding-top: 40em;
+        }
+    }
+
+    @media only screen and (min-width: 360px) and (max-width: 1200px) {
+        .footer {
+            padding-top: 30em;
+        }
+
+        .footer .logo-footer {
+            margin-left: 3em;
+            padding-top: 1em;
+        }
+
+        .footer .column ul li {
+            list-style: none;
+            padding: 5px 0px;
+            font-weight: 600;
+            color: gray;
+        }
+
+        .footer .column ul {
+            width: 100%;
+        }
+
+        .footer .column ul a {
+            text-decoration: none;
+            font-size: 1em;
+            color: gray;
+            transition: 0.5s;
+        }
+
+        .footer .column ul .underline-bar {
+            height: 5px;
+            background-color: transparent;
+            width:
+                0%;
+            transition: width 0.2s, background-color 0.5s;
+        }
+
+        .footer .column ul .active .underline-bar {
+            background-color: #006478;
+            width: 10%;
+        }
+
+        .footer .column ul li:hover .underline-bar {
+            background-color: #006478;
+            width: 50%;
+        }
+
+        .footer .column ul i {
+            font-size: 2em;
+            margin: 0px 10px;
+        }
+
+        .footer .column .title {
+            font-weight: 800;
+            font-size: 20px;
+            color: #000;
+        }
+    }
+
+    .sub-footer {
+        background:
+            #006478;
+        padding: 5px 0px;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    @media (max-width: 720px) {
+        .footer .column {
+            width: 90%;
+            display: block;
+            margin: 0% 0%;
+        }
+
+        .footer .column:nth-child(2),
+        .footer .column:nth-child(3) {
+            width: 40%;
+            display: inline-block;
+        }
+    }
+
+
     .title-packages-card {
         font-weight: bold;
         font-size: 36px;
