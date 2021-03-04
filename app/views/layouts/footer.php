@@ -15,7 +15,7 @@
                             <div class="underline-bar"></div>
                         </li>
                         <li class="<?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
-                            <a href="<?= baseurl; ?>/services">Our Services</a>
+                            <a href="<?= baseurl; ?>/home/services">Our Services</a>
                             <div class="underline-bar"></div>
                         </li>
                         <li class="<?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">

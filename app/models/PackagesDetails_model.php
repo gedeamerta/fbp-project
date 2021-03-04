@@ -23,10 +23,10 @@ class PackagesDetails_model {
         return $this->db->resultAll();
     }
 
-    public function getPackagesDetails($slug)
+    public function getPackagesDetails($id)
     {
-        $this->db->query('SELECT * FROM packages_details WHERE slug_details = :slug_details');
-        $this->db->bind('slug_details', $slug);
+        $this->db->query('SELECT * FROM packages_details WHERE id = :id');
+        $this->db->bind('id', $id);
         return $this->db->single();
     }
 
@@ -113,7 +113,7 @@ class PackagesDetails_model {
         return $this->db->rowCount();
     }
 
-    public function updateDataPackagesDetails($slug)
+    public function updateDataPackagesDetails($id)
     {  
         $title_packages = htmlspecialchars($_POST['title_packages_details']);
         $slug = $this->slugify($title_packages);
@@ -150,20 +150,22 @@ class PackagesDetails_model {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-            $query = "UPDATE packages_details SET title_packages_details= :title_packages_details, slug_details= :slug_details, descriptions_details= :descriptions_details, photos_details= :photos_details WHERE slug_details = :slug_details";
+            $query = "UPDATE packages_details SET title_packages_details= :title_packages_details, slug_details= :slug_details, descriptions_details= :descriptions_details, photos_details= :photos_details WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("title_packages_details", $title_packages);
             $this->db->bind("slug_details", $slug);
             $this->db->bind("descriptions_details", $descriptions);
             $this->db->bind("photos_details", $_FILES['photos_details']['name']);
+            $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }else {
-            $query = "UPDATE packages_details SET title_packages_details= :title_packages_details, slug_details= :slug_details, descriptions_details= :descriptions_details WHERE slug_details = :slug_details";
+            $query = "UPDATE packages_details SET title_packages_details= :title_packages_details, slug_details= :slug_details, descriptions_details= :descriptions_details WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("title_packages_details", $title_packages);
             $this->db->bind("slug_details", $slug);
             $this->db->bind("descriptions_details", $descriptions);
+            $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }

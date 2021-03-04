@@ -19,7 +19,8 @@
     <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
             <h2 class="text-title">
-                <span class="underline-title-text">Details Packages</span>
+                <span class="underline-title-text">Details Packages
+                    <?= $data['packages_title']['title_packages'] ?></span>
             </h2>
         </div>
     </div>
@@ -28,17 +29,19 @@
 <div class="container">
     <div class="row">
         <?php foreach($data['packages_details'] as $packages_details) :?>
-        <div class="col-lg-6 col-md-6 col-sm-6 align-items-center justify-content-center d-flex" data-aos="fade-up"
+        <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center d-flex" data-aos="fade-up"
             data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-            <div class="card-pages-services card" style="max-width: 80%">
+            <div class="card-pages-services card mt-3">
                 <div class="row no-gutters">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <img src="<?= baseurl ?>/assets/images/<?= $packages_details['photo_details']?>" alt=""
-                            style="width: 100%; border-radius: 0 0 0 50px; margin-top:0">
+                        <?php if($packages_details['photos_details']) : ?>
+                        <img class="mx-auto card-img-top image--cover"
+                            src="<?= baseurl ?>/assets/images/<?= $packages_details['photos_details']?>" alt="">
+                        <?php else : ?>
+                        <img class="mt-0 image--cover" src="<?= baseurl ?>/assets/images/default.jpg" alt="" />
+                        <?php endif; ?>
                     </div>
 
-                </div>
-                <div class="row no-gutters">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="card-body card-body-packages">
                             <h5 class="card-title title-packages-card" style="margin-top: 0;">
@@ -48,12 +51,13 @@
                                 <?= $packages_details['descriptions_details']?>
                             </p>
                             <a href="https://api.whatsapp.com/send?phone=6287861250115"> Contact Now<i
-                                    class="fas fa-arrow-right" style="margin-left: 5px; padding-top: 2px"></i></a>
+                                    class="fas fa-phone-alt" style="margin-left: 5px;"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <?php endforeach;?>
     </div>
 </div>

@@ -21,10 +21,9 @@
                                 <td><?= $packages['descriptions'] ?></td>
                                 <td>
                                     <?php if($packages['photos']) : ?>
-                                    <img src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>"
-                                        style="width: 100%" alt="">
+                                    <img src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>" alt="">
                                     <?php else : ?>
-                                    <img src="<?= baseurl ?>/assets/images/default.jpg" style="width: 20%" alt="" />
+                                    <img src="<?= baseurl ?>/assets/images/default.jpg" alt="" />
                                     <?php endif; ?>
                                 </td>
                                 <td> <a href=" <?= baseurl ?>/admin/deletePackages/<?= $packages['id']?>"
@@ -35,7 +34,7 @@
                                             class="far fa-edit"></i>
                                     </a>
                                     <a href="<?= baseurl ?>/admin/packages_details/<?= $packages['id'] ?>"><i
-                                            class="far fa-plus-square" style="color: red"></i>
+                                            class="fas fa-cubes"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -43,49 +42,60 @@
 
                         </tbody>
                     </table>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                        Add New Packages
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Form Packages -->
-    <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <h1>Add Packages</h1>
-            <div class="white-box">
-                <?php Flasher::flash();  ?>
-                <form method="post" action="<?= baseurl ?>/admin/add_packages" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Title Pakages</label>
-                                <input type="text" class="form-control" name="title_packages"
-                                    placeholder="Title Packages" required />
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Packages</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="<?= baseurl ?>/admin/add_packages" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Title Pakages</label>
+                                    <input type="text" class="form-control" name="title_packages"
+                                        placeholder="Title Packages" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Photos</label>
+                                    <input type="file" class="form-control" name="photos" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Descriptions</label>
+                                    <textarea name="descriptions" id="" cols="30" rows="10"
+                                        class="form-control"></textarea>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Descriptions</label>
-                                <input type="text" class="form-control" name="descriptions" placeholder="Descriptions"
-                                    required />
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Photos</label>
-                                <input type="file" class="form-control" name="photos" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary btn-round">
-                                Add Packages
-                            </button>
-                        </div>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Data</button>
+                </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <?php Flasher::flash();  ?>
 </div>

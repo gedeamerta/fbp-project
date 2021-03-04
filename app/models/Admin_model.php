@@ -85,6 +85,7 @@ class Admin_model
         $username = htmlspecialchars($data['username']);
         $email = htmlspecialchars($data['email']);
         $password = htmlspecialchars($data['password']);
+        $password2 = htmlspecialchars($data['password2']);
         $level = htmlspecialchars($data['level']);
 
         //validate password
@@ -100,7 +101,12 @@ class Admin_model
                     '<script>
                             alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number.")
                     </script>';
-            } else {
+            } else if ($password != $password2) {
+                echo
+                '<script>
+                        alert("Your password is not same")
+                </script>';
+            }else {
                 $query = "INSERT INTO admins (fullname, slug, username, email, password, level) VALUES (:fullname, :slug, :username, :email, :password, :level)";
                 $this->db->query($query);
                 $this->db->bind("fullname", $fullname);

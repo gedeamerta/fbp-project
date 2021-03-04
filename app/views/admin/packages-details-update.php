@@ -4,10 +4,10 @@
             <div class="white-box">
                 <?php Flasher::flash();  ?>
                 <form method="post"
-                    action="<?= baseurl ?>/admin/updatePackagesDetails/<?= $data['packages_details_single']['slug_details'] ?>"
+                    action="<?= baseurl ?>/admin/updatePackagesDetails/<?= $data['packages_details_single']['id'] ?>"
                     enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Title Packages</label>
                                 <input type="text" class="form-control" name="title_packages_details"
@@ -16,24 +16,25 @@
                                     required />
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Descriptions</label>
-                                <input type="text" class="form-control" name="descriptions_details"
-                                    placeholder="Descriptions"
-                                    value="<?= $data['packages_details_single']['descriptions_details'] ?>" required />
-                            </div>
-                        </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>Photos</label>
                                 <input type="file" class="form-control" name="photos_details" />
                             </div>
                         </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Descriptions</label>
+                                <textarea class="form-control" name="descriptions_details" id="" cols="30" rows="10"
+                                    value="<?= $data['packages_details_single']['descriptions_details'] ?>"
+                                    required></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="update ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary ">
+                            <button type="submit" class="btn btn-primary btn-round">
                                 Update Packages Details
                             </button>
                         </div>

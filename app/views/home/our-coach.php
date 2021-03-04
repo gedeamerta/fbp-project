@@ -62,11 +62,11 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="card-body card-body-packages">
-                            <h3 class="card-title title-packages-card text-center" style="margin: 0;">
-                                <?= $coach['name']?></h3>
-                            <p class="card-text subtitle-packages text-center">
+                            <p class="card-text subtitle-packages text-center" style="color: #00d5ff; margin:0">
                                 <?= $coach['job']?>
                             </p>
+                            <h3 class="card-title title-packages-card text-center" style="margin: 0;">
+                                <?= $coach['name']?></h3>
                         </div>
                     </div>
                 </div>
@@ -88,24 +88,11 @@
                 All of our activity to stay healthy and always maintain it
             </h2>
         </div>
+        <?php foreach($data['docs'] as $docs) : ?>
         <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="1000">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-1.JPG" alt="" />
+            <img src="<?= baseurl ?>/assets/images/<?= $docs['photos'] ?>" alt="" />
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="1200">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-2.jpeg" alt="" />
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="1400">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-3.jpeg" alt="" />
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="1600">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-4.JPG" alt="" />
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="1800">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-5.JPG" alt="" />
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 mt-4" data-aos="flip-left" data-aos-duration="2000">
-            <img src="<?= baseurl ?>/assets/images/pic-fbp-6.JPG" alt="" />
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>
 <!-- FBP Pic End -->

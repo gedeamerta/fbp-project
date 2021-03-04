@@ -168,9 +168,9 @@ class Admin extends Controller
         }
     }
 
-    public function updatePackagesDetails($slug)
+    public function updatePackagesDetails($id)
     {
-        if ($this->model('PackagesDetails_model')->updateDataPackagesDetails($slug) > 0) {
+        if ($this->model('PackagesDetails_model')->updateDataPackagesDetails($id) > 0) {
             Flasher::setFlash('success', 'Success Update Data Packages Details');
             header("Location: " . baseurl . "/admin/packages");
         } else {
@@ -265,6 +265,255 @@ class Admin extends Controller
         } else {
             Flasher::setFlash('error', 'Fail Delete Data Coach');
             header("Location: " . baseurl . "/admin/coach");
+        }
+    }
+
+    // !! Before After Secion
+    public function before_after()
+    {
+        $data['title'] = 'Dashboard Before & After';
+        $data['set_active'] = 'beforeafter'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['before'] = $this->model("BeforeAfter_model")->getAllBefore();
+        $data['after'] = $this->model("BeforeAfter_model")->getAllAfter();
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/before-after', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function add_before()
+    {
+        if ($this->model('BeforeAfter_model')->addBefore($_POST) > 0) {
+            Flasher::setFlash('success', 'Success Add Before Clients');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Add Before Clients');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    public function before_update($id)
+    {
+        $data['title'] = 'Dashboard Before Clients Update';
+        $data['set_active'] = 'before'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['before_single'] = $this->model("BeforeAfter_model")->getBeforeId($id);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/before-update', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function updateBefore($id)
+    {
+        if ($this->model('BeforeAfter_model')->updateDataBefore($id) > 0) {
+            Flasher::setFlash('success', 'Success Update Data Before');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Update Data Before');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    public function deleteBefore($id)
+    {
+        if ($this->model('BeforeAfter_model')->deleteDataBefore($id) > 0) {
+            Flasher::setFlash('success', 'Success Delete Data Before');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Delete Data Before');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    // !! Section After
+    public function add_after()
+    {
+        if ($this->model('BeforeAfter_model')->addAfter($_POST) > 0) {
+            Flasher::setFlash('success', 'Success Add After Clients');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Add After Clients');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    public function after_update($id)
+    {
+        $data['title'] = 'Dashboard After Clients Update';
+        $data['set_active'] = 'after'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['after_single'] = $this->model("BeforeAfter_model")->getAfterId($id);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/after-update', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function updateAfter($id)
+    {
+        if ($this->model('BeforeAfter_model')->updateDataAfter($id) > 0) {
+            Flasher::setFlash('success', 'Success Update Data After');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Update Data After');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    public function deleteAfter($id)
+    {
+        if ($this->model('BeforeAfter_model')->deleteDataAfter($id) > 0) {
+            Flasher::setFlash('success', 'Success Delete Data After');
+            header("Location: " . baseurl . "/admin/before_after");
+        } else {
+            Flasher::setFlash('error', 'Fail Delete Data After');
+            header("Location: " . baseurl . "/admin/before_after");
+        }
+    }
+
+    // !! Section Documentations
+    public function docs()
+    {
+        $data['title'] = 'Dashboard Documentations';
+        $data['set_active'] = 'docs'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['docs'] = $this->model("Documentation_model")->getAllDocs();
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/docs', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function add_docs()
+    {
+        if ($this->model('Documentation_model')->addDocs($_POST) > 0) {
+            Flasher::setFlash('success', 'Success Add After Documentations');
+            header("Location: " . baseurl . "/admin/docs");
+        } else {
+            Flasher::setFlash('error', 'Fail Add After Documentations');
+            header("Location: " . baseurl . "/admin/docs");
+        }
+    }
+
+    public function docs_update($id)
+    {
+        $data['title'] = 'Dashboard After Clients Update';
+        $data['set_active'] = 'after'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['docs_single'] = $this->model("Documentation_model")->getDocsId($id);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/docs-update', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function updateDocs($id)
+    {
+        if ($this->model('Documentation_model')->updateDataDocs($id) > 0) {
+            Flasher::setFlash('success', 'Success Update Data After');
+            header("Location: " . baseurl . "/admin/docs");
+        } else {
+            Flasher::setFlash('error', 'Fail Update Data After');
+            header("Location: " . baseurl . "/admin/docs");
+        }
+    }
+
+    public function deleteDocs($id)
+    {
+        if ($this->model('Documentation_model')->deleteDataDocs($id) > 0) {
+            Flasher::setFlash('success', 'Success Delete Data Docs');
+            header("Location: " . baseurl . "/admin/docs");
+        } else {
+            Flasher::setFlash('error', 'Fail Delete Data Docs');
+            header("Location: " . baseurl . "/admin/docs");
+        }
+    }
+
+    // !! Section Testimonials
+    public function testi()
+    {
+        $data['title'] = 'Dashboard Testi'; 
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['testi'] = $this->model("Testi_model")->getAllTesti();
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/testi', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function add_testi()
+    {
+        if ($this->model('Testi_model')->addDataTesti($_POST) > 0) {
+            Flasher::setFlash('success', 'Success Add Testimonials');
+            header("Location: " . baseurl . "/admin/testi");
+        } else {
+            Flasher::setFlash('error', 'Fail Add Testimonials');
+            header("Location: " . baseurl . "/admin/testi");
+        }
+    }
+
+    public function testi_update($id)
+    {
+
+        $data['title'] = 'Dashboard Testi Update';
+        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['testi_single'] = $this->model("Testi_model")->getTestiId($id);
+        
+        if(!isset($_SESSION['login_admin'])) {
+            header("Location: " . baseurl . "/admin/index");
+        }else {
+            $this->view('layouts/header-admin', $data);
+            $this->view('admin/testi-update', $data);
+            $this->view('layouts/footer-admin',$data);
+        }
+    }
+
+    public function updateTesti($id)
+    {
+
+        if ($this->model('Testi_model')->updateDataTesti($id) > 0) {
+            Flasher::setFlash('success', 'Success Update Data Testi');
+            header("Location: " . baseurl . "/admin/testi");
+        } else {
+            Flasher::setFlash('error', 'Fail Update Data Testi');
+            header("Location: " . baseurl . "/admin/testi");
+        }
+    }
+
+    public function deleteTesti($id)
+    {
+        if ($this->model('Testi_model')->deleteDataTesti($id) > 0) {
+            Flasher::setFlash('success', 'Success Delete Data Testi');
+            header("Location: " . baseurl . "/admin/testi");
+        } else {
+            Flasher::setFlash('error', 'Fail Delete Data Testi');
+            header("Location: " . baseurl . "/admin/testi");
         }
     }
 

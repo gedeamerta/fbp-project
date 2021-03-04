@@ -27,14 +27,15 @@ class Home extends Controller
 
     }
 
-    public function details_packages($slug)
+    public function detail_packages($id)
     {
         $data['title'] = 'Future Body Project - Packages Details'; 
         $data['set_active'] = 'our-services'; 
-        $data['packages_details'] = $this->model("Packages_model")->getDetailsPackages($slug);
+        $data['packages_details'] = $this->model("Home_model")->getDetailsPackages($id);
+        $data['packages_title'] = $this->model("Home_model")->getTitlePackages($id);
         
         $this->view('layouts/header', $data);
-        $this->view('home/details-packages', $data);
+        $this->view('home/detail-packages', $data);
         $this->view('layouts/footer',$data);
     }
 
@@ -56,6 +57,7 @@ class Home extends Controller
         $data['title'] = 'Future Body Project - Coach'; 
         $data['set_active'] = 'our-coach'; 
         $data['coach'] = $this->model("Coach_model")->getAllCoach();
+        $data['docs'] = $this->model("Documentation_model")->getAllDocs();
         
         $this->view('layouts/header', $data);
         $this->view('home/our-coach', $data);

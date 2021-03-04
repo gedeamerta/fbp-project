@@ -45,6 +45,16 @@ $(document).ready(function() {
     $('#packagesTable').DataTable();
 });
             </script>
+            <script>
+$(document).ready(function() {
+    $('#beforeTable').DataTable();
+});
+            </script>
+            <script>
+$(document).ready(function() {
+    $('#afterTable').DataTable();
+});
+            </script>
             </body>
 
             </html>

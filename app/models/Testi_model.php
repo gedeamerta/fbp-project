@@ -1,5 +1,5 @@
 <?php
-class Coach_model {
+class Testi_model {
     private $db;
 
     public function __construct()
@@ -7,34 +7,24 @@ class Coach_model {
         $this->db = new Database;
     }
 
-    
-    public function getCoachBy($param, $value)
+    public function getAllTesti()
     {
-        if (isset($param) && isset($value)) {
-            $this->db->query("SELECT * FROM coach_profile WHERE $param = :$param");
-            $this->db->bind($param, $value);
-            return $this->db->single();
-        }
-    }
-    public function getAllCoach()
-    {
-        $this->db->query('SELECT * FROM coach_profile');
+        $this->db->query('SELECT * FROM testimonials');
         return $this->db->resultAll();
     }
 
-    public function getCoachId($id)
+    public function getTestiId($id)
     {
-        $this->db->query('SELECT * FROM coach_profile WHERE id = :id');
+        $this->db->query('SELECT * FROM testimonials WHERE id = :id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
-    
 
-    public function addCoach($data)
-    {
+    public function addDataTesti($data)
+    {     
         $name = htmlspecialchars($data['name']);
         $job = htmlspecialchars($data['job']);
-        
+        $descriptions = htmlspecialchars($data['descriptions']);
         //to find image location
         $targetDir =  __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "assets" . DIRECTORY_SEPARATOR . "images" . DIRECTORY_SEPARATOR;
         $targetFile = $targetDir . basename($_FILES["photos"]["name"]);
@@ -65,19 +55,22 @@ class Coach_model {
             }
         }
         
-        $query = "INSERT INTO coach_profile (name, job, photos ) VALUES (:name, :job, :photos)";
+        $query = "INSERT INTO testimonials (name, job, descriptions, photos) VALUES (:name, :job, :descriptions, :photos)";
         $this->db->query($query);
         $this->db->bind("name", $name);
         $this->db->bind("job", $job);
+        $this->db->bind("descriptions", $descriptions);
         $this->db->bind("photos", $_FILES['photos']['name']);
         $this->db->execute();
         return $this->db->rowCount();
     }
-
-    public function updateDataCoach($id)
+    
+    public function updateDataTesti($id)
     {  
         $name = htmlspecialchars($_POST['name']);
         $job = htmlspecialchars($_POST['job']);
+        $descriptions = htmlspecialchars($_POST['descriptions']);
+
 
         if(isset($_FILES['photos']['name']) && $_FILES['photos']['error'] <= 0) {
             //to find image location
@@ -109,29 +102,29 @@ class Coach_model {
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-
-            $query = "UPDATE coach_profile SET name= :name, job = :job, photos= :photos WHERE id = :id";
+            $query = "UPDATE testimonials SET name= :name, job= :job, descriptions= :descriptions, photos= :photos WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("name", $name);
             $this->db->bind("job", $job);
+            $this->db->bind("descriptions", $descriptions);
             $this->db->bind("photos", $_FILES['photos']['name']);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }else {
-            $query = "UPDATE coach_profile SET name= :name, job=:job WHERE id = :id";
+            $query = "UPDATE testimonials SET name= :name, job= :job, descriptions= :descriptions WHERE id = :id";
             $this->db->query($query);
             $this->db->bind("name", $name);
             $this->db->bind("job", $job);
+            $this->db->bind("descriptions", $descriptions);
             $this->db->bind("id", $id);
             $this->db->execute();
             return $this->db->rowCount();
         }
-
     }
 
-    public function deleteDataCoach($id) {
-        $query = "DELETE FROM coach_profile WHERE id = :id";
+    public function deleteDataTesti($id) {
+        $query = "DELETE FROM testimonials WHERE id = :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
         $this->db->execute();

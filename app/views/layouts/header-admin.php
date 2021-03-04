@@ -31,6 +31,23 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <style>
+    table tbody tr td img {
+        width: 40%;
+    }
+
+    table tbody tr td {
+        width: 15%;
+    }
+
+    @media all and (max-width: 768px) {
+
+        table tbody tr td img {
+            width: 100%;
+        }
+    }
+    </style>
+
 </head>
 
 <body>
@@ -96,23 +113,23 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
-                                aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="<?= baseurl ?>/admin/before_after" aria-expanded="false">
                                 <i class="fas fa-hourglass-start"></i>
                                 <span class="hide-menu">Before & After</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
-                                aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="<?= baseurl ?>/admin/docs" aria-expanded="false">
+                                <i class="fas fa-camera-retro"></i>
                                 <span class="hide-menu">Documentations</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
-                                aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="<?= baseurl ?>/admin/testi" aria-expanded="false">
+                                <i class="far fa-smile"></i>
                                 <span class="hide-menu">Testimonials</span>
                             </a>
                         </li>

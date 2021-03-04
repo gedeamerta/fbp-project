@@ -31,9 +31,9 @@
 <div class="container">
     <div class="row">
         <?php foreach($data['packages'] as $packages) : ?>
-        <div class="col-lg-6 col-md-6 col-sm-6 align-items-center justify-content-center d-flex" data-aos="fade-up"
+        <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center d-flex" data-aos="fade-up"
             data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-            <div class="card-pages-services card mt-3" style="max-width: 80%">
+            <div class="card-pages-services card mt-3">
                 <div class="row no-gutters">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <?php if($packages['photos']) : ?>
@@ -49,14 +49,13 @@
                             <p class="card-text subtitle-packages">
                                 <?= $packages['descriptions']?>
                             </p>
-                            <a href="<?= baseurl?>/home/details-packages/<?= $packages['slug']?>">See Details<i
+                            <a href="<?= baseurl?>/home/detail_packages/<?= $packages['id']?>">See Details<i
                                     class="fas fa-arrow-right" style="margin-left: 5px; padding-top: 2px"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <?php endforeach; ?>
     </div>
 </div>

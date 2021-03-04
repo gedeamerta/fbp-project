@@ -72,6 +72,11 @@
         object-fit: cover;
         object-position: center right;
     }
+
+    .title-packages-card {
+        font-weight: bold;
+        font-size: 36px;
+    }
     </style>
 
 </head>
