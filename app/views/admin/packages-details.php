@@ -18,7 +18,7 @@
                             <?php foreach($data['packages_details'] as $details) : ?>
                             <tr>
                                 <td><?= $details['title_packages_details'] ?></td>
-                                <td><?= $details['descriptions_details'] ?></td>
+                                <td><?= html_entity_decode($details['descriptions_details']) ?></td>
                                 <td>
                                     <?php if($details['photos_details']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $details['photos_details'] ?>" alt="">
@@ -93,8 +93,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions_details" id="" cols="30"
-                                        rows="10"></textarea>
+                                    <textarea class="form-control" name="descriptions_details" id="descriptions"
+                                        cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>

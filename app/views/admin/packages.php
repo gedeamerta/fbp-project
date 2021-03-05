@@ -3,6 +3,12 @@
     <!-- Data Tables Packages -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <h1>Packages </h1>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary mb-2 font-weight-bolder" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Add New Packages
+            </button>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="packagesTable" class="display table table-bordered">
@@ -18,7 +24,7 @@
                             <?php foreach($data['packages'] as $packages) : ?>
                             <tr>
                                 <td><?= $packages['title_packages'] ?></td>
-                                <td><?= $packages['descriptions'] ?></td>
+                                <td><?= html_entity_decode($packages['descriptions']) ?></td>
                                 <td>
                                     <?php if($packages['photos']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $packages['photos'] ?>" alt="">
@@ -42,11 +48,6 @@
 
                         </tbody>
                     </table>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                        Add New Packages
-                    </button>
                 </div>
             </div>
         </div>
@@ -82,7 +83,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea name="descriptions" id="" cols="30" rows="10"
+                                    <textarea name="descriptions" id="descriptions" cols="30" rows="10"
                                         class="form-control"></textarea>
                                 </div>
                             </div>

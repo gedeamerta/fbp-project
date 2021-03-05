@@ -3,7 +3,8 @@
     <!-- Data Tables Admin -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder mb-2" data-toggle="modal"
+            <h1>Testimonials</h1>
+            <button type="button" class="btn btn-primary font-weight-bolder mb-2" data-toggle="modal"
                 data-target="#exampleModalCenter">
                 Add New Testi
             </button>
@@ -87,7 +88,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions" id="" cols="30"
+                                    <textarea class="form-control" name="descriptions" id="descriptions" cols="30"
                                         rows="10"></textarea>
                                 </div>
                             </div>

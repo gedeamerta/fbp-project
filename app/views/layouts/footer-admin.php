@@ -38,6 +38,17 @@
             <script type="text/javascript" charset="utf8"
                 src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js">
             </script>
+            <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+            <script>
+tinymce.init({
+    selector: '#descriptions'
+});
+            </script>
+            <script>
+tinymce.init({
+    selector: '#descriptions2'
+});
+            </script>
             <script>
 $(document).ready(function() {
     $('#packagesTable').DataTable();

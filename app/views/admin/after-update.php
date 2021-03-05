@@ -30,8 +30,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descriptions</label>
-                                <textarea class="form-control" name="descriptions" id="" cols="30" rows="10"
-                                    value="<?= $data['after_single']['descriptions'] ?>" required></textarea>
+                                <textarea class="form-control" name="descriptions" id="descriptions" cols="30" rows="10"
+                                    required></textarea>
                             </div>
                         </div>
                     </div>

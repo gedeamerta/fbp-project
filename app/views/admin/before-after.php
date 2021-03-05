@@ -3,7 +3,12 @@
     <!-- Data Tables Admin -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <!-- Button trigger modal -->
             <h1>Before Clients</h1>
+            <button type="button" class="btn btn-primary mb-2 font-weight-bolder" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Add Before Clients
+            </button>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="beforeTable" class="display table table-bordered">
@@ -42,11 +47,6 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                        Add Before Clients
-                    </button>
                 </div>
             </div>
         </div>
@@ -89,7 +89,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions" id="" cols="30"
+                                    <textarea class="form-control" name="descriptions" id="descriptions" cols="30"
                                         rows="10"></textarea>
                                 </div>
                             </div>
@@ -107,6 +107,11 @@
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <h1>After Clients</h1>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary mb-2 font-weight-bolder" data-toggle="modal"
+                data-target="#afterClients">
+                Add After Clients
+            </button>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="afterTable" class="display table table-bordered">
@@ -145,11 +150,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
-                        data-target="#afterClients">
-                        Add After Clients
-                    </button>
+
                 </div>
             </div>
         </div>
@@ -192,7 +193,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions" id="" cols="30"
+                                    <textarea class="form-control" name="descriptions" id="descriptions2" cols="30"
                                         rows="10"></textarea>
                                 </div>
                             </div>

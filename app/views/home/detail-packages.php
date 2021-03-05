@@ -48,7 +48,7 @@
                                 <?= $packages_details['title_packages_details']?>
                             </h5>
                             <p class="card-text subtitle-packages">
-                                <?= $packages_details['descriptions_details']?>
+                                <?= html_entity_decode($packages_details['descriptions_details'])?>
                             </p>
                             <a href="https://api.whatsapp.com/send?phone=6287861250115"> Contact Now<i
                                     class="fas fa-phone-alt" style="margin-left: 5px;"></i></a>

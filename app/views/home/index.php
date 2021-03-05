@@ -169,7 +169,7 @@
                         <div class="content">
                             <h3><?= $testi['name']?><br /><span><?=$testi['job']?></span></h3>
                             <p>
-                                <?=$testi['descriptions']?>
+                                <?=html_entity_decode($testi['descriptions'])?>
                             </p>
                         </div>
                         <?php if($testi['photos']) : ?>

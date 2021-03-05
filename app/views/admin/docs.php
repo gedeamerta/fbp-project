@@ -3,6 +3,12 @@
     <!-- Data Tables Admin -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <h1>Documentation</h1>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary mb-2 font-weight-bolder" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Add New Docs
+            </button>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="packagesTable" class="display table table-bordered">
@@ -38,11 +44,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                        Add New Docs
-                    </button>
+
                 </div>
             </div>
         </div>

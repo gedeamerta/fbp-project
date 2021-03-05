@@ -1,12 +1,11 @@
 <?php
 class Packages_model {
     private $db;
-
+    
     public function __construct()
     {
         $this->db = new Database;
     }
-
     
     public function getPackagesBy($param, $value)
     {

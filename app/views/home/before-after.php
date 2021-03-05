@@ -32,7 +32,7 @@
                                 <?= $before['job'] ?>
                             </p>
                             <h5>
-                                <?= $before['descriptions'] ?>
+                                <?= html_entity_decode($before['descriptions']) ?>
                             </h5>
                             <h5><span style="font-weight: 900;">-Before-</span></h5>
                         </div>
@@ -60,7 +60,7 @@
                                 <?= $after['job'] ?>
                             </p>
                             <h5>
-                                <?= $after['descriptions'] ?>
+                                <?= html_entity_decode($after['descriptions']) ?>
                             </h5>
                             <h5><span style="font-weight: 900; color:#00d5ff">-After-</span></h5>
                         </div>

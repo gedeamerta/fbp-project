@@ -47,7 +47,7 @@
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder mb-2" data-toggle="modal"
+            <button type="button" class="btn btn-primary mt-3 font-weight-bolder mb-2" data-toggle="modal"
                 data-target="#exampleModalCenter">
                 Add New Admin
             </button>

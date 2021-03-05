@@ -23,7 +23,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descriptions</label>
-                                <textarea name="descriptions" id="" cols="30" rows="10" class="form-control"></textarea>
+                                <textarea name="descriptions" id="descriptions" cols="30" rows="10"
+                                    class="form-control"></textarea>
                             </div>
                         </div>
                     </div>

@@ -47,7 +47,7 @@
                         <div class="card-body card-body-packages">
                             <h5 class="card-title title-packages-card"><?= $packages['title_packages']?></h5>
                             <p class="card-text subtitle-packages">
-                                <?= $packages['descriptions']?>
+                                <?= html_entity_decode($packages['descriptions'])?>
                             </p>
                             <a href="<?= baseurl?>/home/detail_packages/<?= $packages['id']?>">See Details<i
                                     class="fas fa-arrow-right" style="margin-left: 5px; padding-top: 2px"></i></a>

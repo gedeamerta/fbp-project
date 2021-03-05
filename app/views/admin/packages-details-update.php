@@ -26,9 +26,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descriptions</label>
-                                <textarea class="form-control" name="descriptions_details" id="" cols="30" rows="10"
-                                    value="<?= $data['packages_details_single']['descriptions_details'] ?>"
-                                    required></textarea>
+                                <textarea class="form-control" name="descriptions_details" id="descriptions" cols="30"
+                                    rows="10" required></textarea>
                             </div>
                         </div>
                     </div>
