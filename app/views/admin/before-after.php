@@ -127,7 +127,8 @@
                                 <td><?= $result['descriptions'] ?></td>
                                 <td>
                                     <?php if($result['photos']) : ?>
-                                    <img src="<?= baseurl ?>/assets/images/<?= $result['photos'] ?>" alt="">
+                                    <img src="<?= baseurl ?>/assets/images/<?= $result['photos'] ?>" alt=""
+                                        style="width: 100%;">
                                     <?php else : ?>
                                     <img src=" <?= baseurl ?>/assets/images/default.jpg" alt="" style="width: 20%;" />
                                     <?php endif; ?>

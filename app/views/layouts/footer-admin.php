@@ -35,8 +35,6 @@
                 src="<?= baseurl ?>/assets/admin-assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js">
             </script>
             <script src="<?= baseurl ?>/assets/admin-assets/js/pages/dashboards/dashboard1.js"></script>
-
-
             <script type="text/javascript" charset="utf8"
                 src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js">
             </script>
