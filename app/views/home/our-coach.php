@@ -27,7 +27,7 @@
                         (2018-2019)</span>
                 </h2>
                 <a href="https://api.whatsapp.com/send?phone=6287861250115" class="btn btn-3 hover-border-1 mt-2"
-                    data-aos="fade-left" data-aos-duration="500">
+                    data-aos="fade-left" data-aos-delay="1000">
                     <span> Contact Now</span>
                 </a>
             </div>
@@ -35,6 +35,7 @@
     </div>
 </div>
 
+<?php if($data['coach']) : ?>
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
@@ -75,6 +76,9 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php else : ?>
+
+<?php endif; ?>
 <!-- Banner End -->
 
 <!-- FBP Pic Start -->

@@ -160,6 +160,50 @@ class Admin_model
         }
     }
 
+    public function updateDataCoAdmin($slug)
+    {   
+        $fullname = $_POST['fullname'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        //validate password
+        $uppercase =  preg_match('@[A-Z]@', $_POST['password']);
+        $lowercase =  preg_match('@[a-z]@', $_POST['password']);
+        $number =  preg_match('@[0-9]@', $_POST['password']);
+
+
+        if (!$uppercase || !$lowercase || !$number || strlen($_POST['password']) < 8) {
+            echo '<script>
+                    alert("Password should be at least 8 characters in length and should include at least one upper case letter, one number.");
+                    setTimeout(function() {
+                        window.location.href="dashboard";
+                    }, 1000);
+                </script>';
+        } else {
+            if ($_POST['password'] !== $_POST['password2']) {
+                echo
+                    '<script>
+                        alert("Your Password is invalid");
+                        setTimeout(function() {
+                            window.location.href="dashboard";
+                        }, 1000);
+                    </script>';
+                exit;
+            }else {
+                $query = "UPDATE admins SET fullname = :fullname, slug = :slug, username = :username, email=:email, phone=:phone, password = :password WHERE slug = :slug";
+                $this->db->query($query);
+                $this->db->bind('fullname', $fullname);
+                $this->db->bind('slug', $slug);
+                $this->db->bind('username', $username);
+                $this->db->bind('email', $email);
+                $this->db->bind('phone', $phone);
+                $this->db->bind('password', password_hash($_POST['password'], PASSWORD_DEFAULT));
+                $this->db->execute();
+                return $this->db->rowCount();
+            }
+        }
+    }
+
     public function deleteAdmin($slug) {
         $query = "DELETE FROM admins WHERE slug = :slug";
         $this->db->query($query);

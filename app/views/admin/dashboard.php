@@ -10,7 +10,7 @@
                                 style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                         </div>
                     </li>
-                    <li class="ms-auto"><span class="counter text-success">659</span></li>
+                    <li class="ms-auto"><span class="counter text-success">0</span></li>
                 </ul>
             </div>
         </div>
@@ -23,7 +23,7 @@
                                 style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                         </div>
                     </li>
-                    <li class="ms-auto"><span class="counter text-purple">869</span></li>
+                    <li class="ms-auto"><span class="counter text-purple">0</span></li>
                 </ul>
             </div>
         </div>
@@ -36,7 +36,7 @@
                                 style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                         </div>
                     </li>
-                    <li class="ms-auto"><span class="counter text-info">911</span>
+                    <li class="ms-auto"><span class="counter text-info">0</span>
                     </li>
                 </ul>
             </div>
@@ -46,6 +46,11 @@
     <!-- Data Tables Admin -->
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder mb-2" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Add New Admin
+            </button>
             <div class="white-box">
                 <div class="table-responsive">
                     <table id="packagesTable" class="display table table-bordered">
@@ -71,18 +76,15 @@
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
+                                    <a href="<?= baseurl ?>/admin/update_admin/<?= $adminData['slug']?>">
+                                        <i class="far fa-edit"></i>
+                                    </a>
                                     <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mt-3 btn-block font-weight-bolder" data-toggle="modal"
-                        data-target="#exampleModalCenter">
-                        Add New Admin
-                    </button>
                 </div>
             </div>
         </div>
@@ -146,7 +148,7 @@
             </div>
         </div>
     </div>
-
+    <?php if($data['admin_single']['level'] == 'master') : ?>
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <h1>Update Admin</h1>
@@ -186,5 +188,5 @@
             </div>
         </div>
     </div>
-
+    <?php endif; ?>
 </div>

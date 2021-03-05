@@ -62,31 +62,24 @@
                 <div class="modal-body">
                     <form method="post" action="<?= baseurl ?>/admin/add_coach" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Fullname</label>
                                     <input type="text" class="form-control" name="name" placeholder="Fullname"
                                         required />
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Job</label>
                                     <input type="text" class="form-control" name="job" placeholder="Job" required />
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Photos</label>
                                     <input type="file" class="form-control" name="photos" placeholder="Password"
                                         required />
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions" id="" cols="30"
-                                        rows="10"></textarea>
                                 </div>
                             </div>
                         </div>

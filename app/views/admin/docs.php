@@ -10,10 +10,11 @@
                             <tr>
                                 <th>No</th>
                                 <th>Photos</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1 ?>
+                            <?php $i = 1; ?>
                             <?php foreach($data['docs'] as $docs) : ?>
                             <tr>
                                 <td><?= $i++ ?></td>
