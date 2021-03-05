@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 04, 2021 at 08:50 AM
+-- Generation Time: Mar 05, 2021 at 01:37 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.15
 
@@ -31,8 +31,9 @@ CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `fullname` text NOT NULL,
   `slug` varchar(100) NOT NULL,
-  `username` varchar(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` enum('master','co-admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -41,9 +42,9 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `fullname`, `slug`, `username`, `email`, `password`, `level`) VALUES
-(1, 'future-body-project', '', 'admin', 'fbp@gmail.com', 'admin123', 'master'),
-(5, 'Ary Pradnya Dewi', 'ary-pradnya-dewi', 'arypradnya', 'amertasurya@yahoo.co.id', '$2y$10$eSGaZ8bURBIbl85mJV9h3eggorcyPqnXG3/gVma.7ZwQBMFuBZ9dO', 'co-admin');
+INSERT INTO `admins` (`id`, `fullname`, `slug`, `username`, `email`, `phone`, `password`, `level`) VALUES
+(1, 'future-body-project', '', 'admin', 'fbp@gmail.com', '0', 'admin123', 'master'),
+(5, 'Ary Pradnya Dewi 2', 'ary-pradnya-dewi', 'arypradnya2', 'amertasurya@yahoo.co.id', '081338103073', '$2y$10$PsA2ivbN53rJcZWccW.EIeIJdlO1X.3.aFqOdTrGOIa.l38lB/0W2', 'co-admin');
 
 -- --------------------------------------------------------
 
@@ -112,10 +113,8 @@ CREATE TABLE `coach_profile` (
 --
 
 INSERT INTO `coach_profile` (`id`, `name`, `job`, `photos`, `created_at`) VALUES
-(3, 'Gede Dilan', 'Assisten ', 'before-1.JPG', '2021-03-04 08:23:31'),
-(4, 'Gede Amerta 2', 'Food Program', 'before-2.JPG', '2021-03-04 08:23:31'),
-(5, 'Ary Pradnya', 'Work Out Program', 'after-man-1.JPG', '2021-03-04 08:23:31'),
-(6, 'Gede Amerta Ganteng', 'Programmer Ganteng ', 'banner-services-1.jpg', '2021-03-04 09:50:20');
+(7, 'Gede Amerta', 'Assisten ', 'coach-1.jpg', '2021-03-05 11:10:16'),
+(8, 'Ary Pradnya', 'Work Out Program', 'coach-2.jpg', '2021-03-05 11:15:05');
 
 -- --------------------------------------------------------
 
@@ -161,9 +160,11 @@ CREATE TABLE `packages` (
 --
 
 INSERT INTO `packages` (`id`, `title_packages`, `slug`, `descriptions`, `photos`, `created_at`) VALUES
-(14, 'Packages 1', 'packages-1', '', 'packages-1.png', '2021-03-04 06:35:16'),
+(14, 'Packages 1', 'packages-1', 'Ini packages 1', 'packages-1.png', '2021-03-04 06:35:16'),
 (15, 'Packages 2', 'packages-2', 'Ini Packages 2', 'packages-2.png', '2021-03-04 06:35:51'),
-(16, 'Packages 3', 'packages-3', 'Ini packages 3', 'packages-3.png', '2021-03-04 06:36:15');
+(16, 'Packages 3', 'packages-3', 'Ini packages 3', 'packages-3.png', '2021-03-04 06:36:15'),
+(18, 'Packages 4', 'packages-4', 'Ini Packages 4', 'kintil untuk menyambar.jpg', '2021-03-05 01:03:03'),
+(19, 'Packages 5', 'packages-5', '&lt;p&gt;Oke mau ga&amp;nbsp;&lt;strong&gt;adasd&amp;nbsp;&lt;em&gt;dasdasd&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;', 'banner-services-2.jpg', '2021-03-05 11:48:36');
 
 -- --------------------------------------------------------
 
@@ -284,7 +285,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `after_clients`
@@ -302,7 +303,7 @@ ALTER TABLE `before_clients`
 -- AUTO_INCREMENT for table `coach_profile`
 --
 ALTER TABLE `coach_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `documentation`
@@ -314,7 +315,7 @@ ALTER TABLE `documentation`
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `packages_details`
@@ -326,7 +327,7 @@ ALTER TABLE `packages_details`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
