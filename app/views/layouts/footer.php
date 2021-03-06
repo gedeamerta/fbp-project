@@ -9,24 +9,29 @@
 
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
                     <ul>
-                        <li class="title">Features</li>
-                        <li class="<?= $data['set_active'] == 'index' ? 'active' : '' ?>">
+                        <li data-aos="fade-down-right" class="title">Features</li>
+                        <li data-aos="fade-down-right" data-aos-delay="900"
+                            class="<?= $data['set_active'] == 'index' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home">Home</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="<?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
+                        <li data-aos="fade-down-right" data-aos-delay="1100"
+                            class="<?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/services">Our Services</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="<?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
+                        <li data-aos="fade-down-right" data-aos-delay="1200"
+                            class="<?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/coach">Our Coach</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="<?= $data['set_active'] == 'result' ? 'active' : '' ?>">
+                        <li data-aos="fade-down-right" data-aos-delay="1300"
+                            class="<?= $data['set_active'] == 'result' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/result">Before & After</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li class="<?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
+                        <li data-aos="fade-down-right" data-aos-delay="1400"
+                            class="<?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/contact">Contact</a>
                             <div class="underline-bar"></div>
                         </li>
@@ -34,12 +39,12 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
                     <ul>
-                        <li class="title">Contact</li>
-                        <li>
+                        <li data-aos="fade-down-right" class="title">Contact</li>
+                        <li data-aos="fade-down-right" data-aos-delay="1000">
                             <img src="<?= baseurl; ?>/assets/images/mail.svg" alt="" />
                             <a href="#">fbp.bali@gmail.com</a>
                         </li>
-                        <li>
+                        <li data-aos="fade-down-right" data-aos-delay="1100">
                             <img src="<?= baseurl; ?>/assets/images/phone.svg" alt="" />
                             <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
                         </li>
@@ -47,12 +52,12 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 column">
                     <ul>
-                        <li class="title">Follow Us</li>
-                        <li>
+                        <li data-aos="fade-down-right" class="title">Follow Us</li>
+                        <li data-aos="fade-down-right" data-aos-delay="1100">
                             <img src="<?= baseurl; ?>/assets/images/instagram.svg" alt="" />
                             <a href="#">fbp_bali</a>
                         </li>
-                        <li>
+                        <li data-aos="fade-down-right" data-aos-delay="1200">
                             <img src="<?= baseurl; ?>/assets/images/facebook.svg" alt="" style="padding-left: 2px" />
                             <a href="#">fbp_bali</a>
                         </li>
