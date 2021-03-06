@@ -25,7 +25,7 @@
                             <tr>
                                 <td><?= $testi['name'] ?></td>
                                 <td><?= $testi['job'] ?></td>
-                                <td><?= $testi['descriptions'] ?></td>
+                                <td><?= html_entity_decode($testi['descriptions']) ?></td>
                                 <td>
                                     <?php if($testi['photos']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $testi['photos'] ?>" alt=""
@@ -66,20 +66,20 @@
                 <div class="modal-body">
                     <form method="post" action="<?= baseurl ?>/admin/add_testi" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Fullname</label>
                                     <input type="text" class="form-control" name="name" placeholder="Fullname"
                                         required />
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Job</label>
                                     <input type="text" class="form-control" name="job" placeholder="Job" required />
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Photos</label>
                                     <input type="file" class="form-control" name="photos" required />
@@ -88,8 +88,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Descriptions</label>
-                                    <textarea class="form-control" name="descriptions" id="descriptions" cols="30"
-                                        rows="10"></textarea>
+                                    <textarea class="form-control" name="descriptions" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>

@@ -65,6 +65,22 @@ class Admin_model
         }
     }
 
+    public function getCountAdmin()
+    {
+        $this->db->query('SELECT COUNT(id) AS count FROM admins');
+        return $this->db->resultAll();
+    }
+    public function getCountPackages()
+    {
+        $this->db->query('SELECT COUNT(id) AS count FROM packages');
+        return $this->db->resultAll();
+    }
+    public function getCountCoach()
+    {
+        $this->db->query('SELECT COUNT(id) AS count FROM coach_profile');
+        return $this->db->resultAll();
+    }
+
     public function getAdmin()
     {
         $this->db->query('SELECT * FROM admins');

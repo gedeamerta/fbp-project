@@ -25,6 +25,9 @@ class Admin extends Controller
         $data['set_active'] = 'dashboard'; 
         $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
         $data['admin'] = $this->model("Admin_model")->getAdmin();
+        $data['total_admin'] = $this->model("Admin_model")->getCountAdmin();
+        $data['total_coach'] = $this->model("Admin_model")->getCountCoach();
+        $data['total_packages'] = $this->model("Admin_model")->getCountPackages();
         
         if(!isset($_SESSION['login_admin'])){
             header("Location: " . baseurl . "/admin/index");

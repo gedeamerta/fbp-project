@@ -26,7 +26,7 @@
                             <tr>
                                 <td><?= $result['name'] ?></td>
                                 <td><?= $result['job'] ?></td>
-                                <td><?= $result['descriptions'] ?></td>
+                                <td><?= html_entity_decode($result['descriptions']) ?></td>
                                 <td>
                                     <?php if($result['photos']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $result['photos'] ?>" alt=""
@@ -129,7 +129,7 @@
                             <tr>
                                 <td><?= $result['name'] ?></td>
                                 <td><?= $result['job'] ?></td>
-                                <td><?= $result['descriptions'] ?></td>
+                                <td><?= html_entity_decode($result['descriptions']) ?></td>
                                 <td>
                                     <?php if($result['photos']) : ?>
                                     <img src="<?= baseurl ?>/assets/images/<?= $result['photos'] ?>" alt=""

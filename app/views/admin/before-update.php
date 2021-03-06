@@ -2,9 +2,6 @@
     <div class="row">
         <h1>Update Data Before Clients</h1>
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <button type="submit" class="btn btn-primary btn-round mb-2">
-                Update Before Clients
-            </button>
             <div class="white-box">
                 <?php Flasher::flash();  ?>
                 <form method="post" action="<?= baseurl ?>/admin/updateBefore/<?= $data['before_single']['id'] ?>"
@@ -33,14 +30,16 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descriptions</label>
-                                <textarea class="form-control" name="descriptions" id="descriptions" cols="30" rows="10"
-                                    required></textarea>
+                                <textarea class="form-control" name="descriptions" id="descriptions" cols="30"
+                                    rows="10"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="update ml-auto mr-auto">
-
+                            <button type="submit" class="btn btn-primary btn-round mb-2">
+                                Update Before Clients
+                            </button>
                         </div>
                     </div>
                 </form>

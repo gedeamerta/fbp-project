@@ -167,13 +167,13 @@
                 <div class="col-lg-6">
                     <div class="box d-flex align-items-center wow fadeInLeft">
                         <div class="content">
-                            <h3><?= $testi['name']?><br /><span><?=$testi['job']?></span></h3>
+                            <h3><?= $testi['name']?><br /><span style="font-size: 16px"><?=$testi['job']?></span></h3>
                             <p>
-                                <?=html_entity_decode($testi['descriptions'])?>
+                                <?= html_entity_decode($testi['descriptions'])?>
                             </p>
                         </div>
                         <?php if($testi['photos']) : ?>
-                        <div class="image">
+                        <div class="image h-80">
                             <img src="<?= baseurl ?>/assets/images/<?= $testi['photos']?>" alt="" class="img-fluid" />
                         </div>
                         <?php else : ?>
