@@ -15,6 +15,10 @@
     <title><?= $data['title'] ?></title>
 
     <style>
+    * {
+        scroll-behavior: smooth;
+    }
+
     nav ul li {
         margin: 15px;
     }

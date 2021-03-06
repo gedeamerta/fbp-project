@@ -16,7 +16,7 @@
     <div class="row">
         <!-- before & after -->
         <?php foreach($data['getBefore'] as $before) :  ?>
-        <div class="col-lg-6" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
             <div class="card-pages-services card mt-3" style="max-width: 100%">
                 <div class="row no-gutters">
                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -44,7 +44,7 @@
         <?php endforeach; ?>
 
         <?php foreach($data['getAfter'] as $after) :  ?>
-        <div class="col-lg-6" data-aos="fade-left" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
             <div class="card-pages-services card mt-3" style="max-width: 100%">
                 <div class="row no-gutters">
                     <div class="col-lg-6 col-md-12 col-sm-12">

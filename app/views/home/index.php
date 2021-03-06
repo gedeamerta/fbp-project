@@ -9,9 +9,8 @@
             <p class="sub-banner-text" data-aos="fade-left" data-aos-duration="3000">
                 Take care of your body, start to healthy life.
             </p>
-            <a href="https://api.whatsapp.com/send?phone=6287861250115" class="btn btn-3 hover-border-1"
-                data-aos="fade-left" data-aos-duration="3000">
-                <span> Contact Now</span>
+            <a href="#services" class="btn btn-3 hover-border-1" data-aos="fade-left" data-aos-duration="3000">
+                <span> Explore Now</span>
             </a>
         </div>
 
@@ -24,7 +23,7 @@
 <!-- Banner End -->
 
 <!-- Card Services belum rapi -->
-<div class="container">
+<div class="container" id="services">
     <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
             <h2 class="text-title">
