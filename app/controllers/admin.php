@@ -4,9 +4,13 @@ class Admin extends Controller
     // !! Section Admin
     public function index()
     {
-        if(!isset($_POST['login-admin']) && !isset($_SESSION['login_admin'])) {
-            $data['title'] = 'Login Admin';
-            $this->view('admin/index',$data);   
+        if(!isset($_POST['login-admin'])) {
+            if(isset($_SESSION['login_admin'])){
+                header("Location: ". baseurl . "/admin/dashboard");
+            }else {
+                $data['title'] = 'Login Admin';
+                $this->view('admin/index',$data);   
+            }
         }else {
             if($this->model("Admin_model")->login_admin($_POST) > 0)
             {
