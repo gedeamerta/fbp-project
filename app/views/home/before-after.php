@@ -106,7 +106,8 @@
                                 <div class="row">
                                     <div class="col-lg-12 text-center link-contact">
                                         <img src="<?= baseurl ?>/assets/images/phone-contact.svg" alt="" />
-                                        <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
+                                        <a
+                                            href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">+6287861250115</a>
                                     </div>
                                 </div>
                             </div>

@@ -197,7 +197,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html">
-                <img src="<?= baseurl ?>/assets/images/logo.png" alt="" />
+                <img data-aos="zoom-out-up" data-aos-delay="900" src="<?= baseurl ?>/assets/images/logo.png" alt="" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -206,23 +206,28 @@
             <div class="collapse navbar-collapse"></div>
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item <?= $data['set_active'] == 'index' ? 'active' : '' ?>">
+                    <li data-aos="zoom-out-up" data-aos-delay="1000"
+                        class="nav-item <?= $data['set_active'] == 'index' ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= baseurl; ?>/home">Home <span class="sr-only">(current)</span></a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item <?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
+                    <li data-aos="zoom-out-up" data-aos-delay="1200"
+                        class="nav-item <?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= baseurl; ?>/home/services">Our Services</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item <?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
+                    <li data-aos="zoom-out-up" data-aos-delay="1300"
+                        class="nav-item <?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= baseurl; ?>/home/coach">Our Coach</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item <?= $data['set_active'] == 'result' ? 'active' : '' ?>">
+                    <li data-aos="zoom-out-up" data-aos-delay="1400"
+                        class="nav-item <?= $data['set_active'] == 'result' ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= baseurl; ?>/home/result">Before & After</a>
                         <div class="underline-bar"></div>
                     </li>
-                    <li class="nav-item <?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
+                    <li data-aos="zoom-out-up" data-aos-delay="1500"
+                        class="nav-item <?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
                         <a class="nav-link" href="<?= baseurl; ?>/home/contact">Contact</a>
                         <div class="underline-bar"></div>
                     </li>

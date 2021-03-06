@@ -1,5 +1,6 @@
 <!-- Banner Start -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-aos="fade-bottom"
+    data-aos-duration="1000">
     <div class="carousel-inner">
         <div class="carousel-item active" data-interval="4000">
             <img src="<?= baseurl ?>/assets/images/banner-services-1.jpg" class="d-block w-100" alt="..." />
@@ -82,7 +83,7 @@
         <div class="container-contact col-md-12 col-sm-12">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Talk to Me !</h5>
                             <p class="card-text subtitle-card-contact">
@@ -93,7 +94,8 @@
                                 <div class="row">
                                     <div class="col-lg-12 text-center link-contact">
                                         <img src="<?= baseurl ?>/assets/images/phone-contact.svg" alt="" />
-                                        <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
+                                        <a
+                                            href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">+6287861250115</a>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +103,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Email Me !</h5>
                             <p class="card-text subtitle-card-contact">

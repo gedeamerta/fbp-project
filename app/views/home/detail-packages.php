@@ -50,8 +50,8 @@
                             <p class="card-text subtitle-packages">
                                 <?= html_entity_decode($packages_details['descriptions_details'])?>
                             </p>
-                            <a href="https://api.whatsapp.com/send?phone=6287861250115"> Contact Now<i
-                                    class="fas fa-phone-alt" style="margin-left: 5px;"></i></a>
+                            <a href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">
+                                Contact Now<i class="fas fa-phone-alt" style="margin-left: 5px;"></i></a>
                         </div>
                     </div>
                 </div>

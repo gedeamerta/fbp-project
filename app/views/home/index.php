@@ -164,7 +164,8 @@
                 <!-- Box-1 -->
                 <?php foreach($data['getTesti'] as $testi) : ?>
                 <div class="col-lg-6">
-                    <div class="box d-flex align-items-center wow fadeInLeft">
+                    <div class="box d-flex align-items-center wow fadeInLeft" data-aos="zoom-out-up"
+                        data-aos-duration="1000">
                         <div class="content">
                             <h3><?= $testi['name']?><br /><span style="font-size: 16px"><?=$testi['job']?></span></h3>
                             <p>
@@ -209,7 +210,7 @@
         <div class="container-contact col-md-12 col-sm-12">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Talk to Me !</h5>
                             <p class="card-text subtitle-card-contact">
@@ -220,7 +221,8 @@
                                 <div class="row">
                                     <div class="col-lg-12 text-center link-contact">
                                         <img src="<?= baseurl ?>/assets/images/phone-contact.svg" alt="" />
-                                        <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
+                                        <a
+                                            href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">+6287861250115</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +230,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Email Me !</h5>
                             <p class="card-text subtitle-card-contact">
@@ -239,7 +241,8 @@
                                 <div class="row">
                                     <div class="col-lg-12 text-center link-contact">
                                         <img src="<?= baseurl ?>/assets/images/email-card.svg" alt="" />
-                                        <a href="">fbp.bali@gmail.com</a>
+                                        <a
+                                            href="https://mail.google.com/#inbox?compose=GTvVlcSBncMcgGMfjfZqWwLcqGGjHNdwSNsphRhMwNjCNMHCwgHBgXBdMQKTRzKHxdQTRgjGbXTTp">fbp.bali@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
