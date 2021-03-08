@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label>Descriptions</label>
                                 <textarea class="form-control" name="descriptions" id="descriptions" cols="30" rows="10"
-                                    required></textarea>
+                                    required><?= $data['after_single']['descriptions'] ?></textarea>
                             </div>
                         </div>
                     </div>

@@ -81,6 +81,7 @@
     /* // Footer */
     .footer {
         padding-top: 15em;
+        height: 60vh;
     }
 
     .footer .column .title {
@@ -99,12 +100,14 @@
     @media only screen and (min-width: 320px) and (max-width: 330px) {
         .footer {
             padding-top: 40em;
+            height: 270vh;
         }
     }
 
     @media only screen and (min-width: 360px) and (max-width: 1200px) {
         .footer {
             padding-top: 30em;
+            height: 185vh;
         }
 
         .footer .logo-footer {

@@ -15,22 +15,22 @@
                             <a href="<?= baseurl; ?>/home">Home</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li data-aos="fade-down-right" data-aos-delay="1100"
+                        <li data-aos="fade-down-right" data-aos-delay="1000"
                             class="<?= $data['set_active'] == 'our-services' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/services">Our Services</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li data-aos="fade-down-right" data-aos-delay="1200"
+                        <li data-aos="fade-down-right" data-aos-delay="1100"
                             class="<?= $data['set_active'] == 'our-coach' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/coach">Our Coach</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li data-aos="fade-down-right" data-aos-delay="1300"
+                        <li data-aos="fade-down-right" data-aos-delay="1200"
                             class="<?= $data['set_active'] == 'result' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/result">Before & After</a>
                             <div class="underline-bar"></div>
                         </li>
-                        <li data-aos="fade-down-right" data-aos-delay="1400"
+                        <li data-aos="fade-down-right" data-aos-delay="1300"
                             class="<?= $data['set_active'] == 'contact' ? 'active' : '' ?>">
                             <a href="<?= baseurl; ?>/home/contact">Contact</a>
                             <div class="underline-bar"></div>
@@ -46,7 +46,8 @@
                         </li>
                         <li data-aos="fade-down-right" data-aos-delay="1100">
                             <img src="<?= baseurl; ?>/assets/images/phone.svg" alt="" />
-                            <a href="https://api.whatsapp.com/send?phone=6287861250115">+6287861250115</a>
+                            <a
+                                href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">+6287861250115</a>
                         </li>
                     </ul>
                 </div>
