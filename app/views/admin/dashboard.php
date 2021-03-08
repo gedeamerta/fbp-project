@@ -174,6 +174,10 @@
                                 <label>Password</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password"
                                     required />
+                                <small style="color: #006478">Password should be at least 8 characters in length and
+                                    should
+                                    include at least
+                                    one upper case letter, one number.</small>
                             </div>
                         </div>
                         <div class="col-md-4">

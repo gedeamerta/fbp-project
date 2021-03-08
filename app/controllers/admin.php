@@ -76,7 +76,7 @@ class Admin extends Controller
             Flasher::setFlash('success', 'Success Update Data Admin');
             header("Location: " . baseurl . "/admin/dashboard");
         } else {
-            Flasher::setFlash('error', 'Fail Update Data Admin');
+            Flasher::setFlash('error', 'Password not valid');
             header("Location: " . baseurl . "/admin/dashboard");
         }
     }
