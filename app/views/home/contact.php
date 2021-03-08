@@ -19,7 +19,7 @@
         <div class="container-contact col-md-12 col-sm-12">
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Talk to Me !</h5>
                             <p class="card-text subtitle-card-contact">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="card card-contact">
+                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
                         <div class="card-body">
                             <h5 class="card-title title-card-contact">Email Me !</h5>
                             <p class="card-text subtitle-card-contact">
