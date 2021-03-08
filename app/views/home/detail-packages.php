@@ -20,7 +20,7 @@
         <div class="col-lg-12 col-md-12 text-center">
             <h2 class="text-title">
                 <span class="underline-title-text">Details
-                    <?= $data['packages_title']['title_packages'] ?></span>
+                    <?= (!isset($data['packages_title']['title_packages'])) ? '' : $data['packages_title']['title_packages']  ?></span>
             </h2>
         </div>
     </div>

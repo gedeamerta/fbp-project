@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label>Descriptions</label>
                                 <textarea class="form-control" name="descriptions" id="descriptions" cols="30"
-                                    rows="10"></textarea>
+                                    rows="10"><?= $data['testi_single']['descriptions'] ?></textarea>
                             </div>
                         </div>
                     </div>
