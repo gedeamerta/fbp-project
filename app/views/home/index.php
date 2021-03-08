@@ -241,8 +241,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 text-center link-contact">
                                         <img src="<?= baseurl ?>/assets/images/email-card.svg" alt="" />
-                                        <a
-                                            href="https://mail.google.com/#inbox?compose=GTvVlcSBncMcgGMfjfZqWwLcqGGjHNdwSNsphRhMwNjCNMHCwgHBgXBdMQKTRzKHxdQTRgjGbXTTp">fbp.bali@gmail.com</a>
+                                        <a href="mailto:fbp.bali@gmail.com?subject=Hello%20Coach">fbp.bali@gmail.com</a>
                                     </div>
                                 </div>
                             </div>
