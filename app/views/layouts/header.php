@@ -99,13 +99,13 @@
 
     @media only screen and (min-width: 320px) and (max-width: 330px) {
         .footer {
-            padding-top: 40em;
+            padding-top: 75em;
         }
     }
 
     @media only screen and (min-width: 360px) and (max-width: 1200px) {
         .footer {
-            padding-top: 35em;
+            padding-top: 75em;
         }
 
         .footer .logo-footer {
