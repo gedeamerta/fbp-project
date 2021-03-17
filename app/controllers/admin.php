@@ -1,5 +1,4 @@
-<?php 
-class Admin extends Controller
+<?php class Admin extends Controller
 {
     // !! Section Admin
     public function index()
@@ -42,18 +41,19 @@ class Admin extends Controller
         }
     }
 
-    public function update_admin()
+    public function update_coadmin($slug)
     {
         $data['title'] = 'Dashboard Admin'; 
         $data['set_active'] = 'dashboard'; 
-        $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+                $data['admin_single'] = $this->model("Admin_model")->getAdminId($_SESSION['id_admin']);
+        $data['coadmin_single'] = $this->model("Admin_model")->getAdminSlug($slug);
         $data['admin'] = $this->model("Admin_model")->getAdmin();
         
         if(!isset($_SESSION['login_admin'])){
             header("Location: " . baseurl . "/admin/index");
         }else {
             $this->view('layouts/header-admin', $data);
-            $this->view('admin/update-admin', $data);
+            $this->view('admin/update-coadmin', $data);
             $this->view('layouts/footer-admin',$data);
         }
     }

@@ -83,7 +83,7 @@
                                         onclick="return confirm('Are u sure want to delete')">
                                         <i class="fas fa-trash-alt" style="color: red;"></i>
                                     </a>
-                                    <a href="<?= baseurl ?>/admin/update_admin/<?= $adminData['slug']?>">
+                                    <a href="<?= baseurl ?>/admin/update_coadmin/<?= $adminData['slug']?>">
                                         <i class="far fa-edit"></i>
                                     </a>
                                     <?php endif; ?>

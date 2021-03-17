@@ -26,8 +26,8 @@
                     <span class="font-weight-bold">Augi Sport Center (2015-2017), and Island warrior Bali
                         (2018-2019)</span>
                 </h2>
-                <a href="https://api.whatsapp.com/send?phone=6287861250115" class="btn btn-3 hover-border-1 mt-2"
-                    data-aos="fade-left" data-aos-delay="1000">
+                <a href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!"
+                    class="btn btn-3 hover-border-1 mt-2" data-aos="fade-left" data-aos-delay="1000">
                     <span> Contact Now</span>
                 </a>
             </div>

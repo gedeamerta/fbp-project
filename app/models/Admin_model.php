@@ -93,6 +93,12 @@ class Admin_model
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+    public function getAdminSlug($slug)
+    {
+        $this->db->query('SELECT * FROM admins WHERE slug = :slug');
+        $this->db->bind('slug', $slug);
+        return $this->db->single();
+    }
 
     public function addNewAdmin($data)
     {
@@ -181,7 +187,6 @@ class Admin_model
         $fullname = $_POST['fullname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $phone = $_POST['phone'];
         //validate password
         $uppercase =  preg_match('@[A-Z]@', $_POST['password']);
         $lowercase =  preg_match('@[a-z]@', $_POST['password']);
@@ -206,13 +211,12 @@ class Admin_model
                     </script>';
                 exit;
             }else {
-                $query = "UPDATE admins SET fullname = :fullname, slug = :slug, username = :username, email=:email, phone=:phone, password = :password WHERE slug = :slug";
+                $query = "UPDATE admins SET fullname = :fullname, slug = :slug, username = :username, email=:email, password = :password WHERE slug = :slug";
                 $this->db->query($query);
                 $this->db->bind('fullname', $fullname);
                 $this->db->bind('slug', $slug);
                 $this->db->bind('username', $username);
                 $this->db->bind('email', $email);
-                $this->db->bind('phone', $phone);
                 $this->db->bind('password', password_hash($_POST['password'], PASSWORD_DEFAULT));
                 $this->db->execute();
                 return $this->db->rowCount();
