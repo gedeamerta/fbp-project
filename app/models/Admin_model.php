@@ -56,10 +56,8 @@ class Admin_model
             if ($password == $password_db || password_verify($password, $password_db)) {
                 $_SESSION['id_admin'] = $data_admin['id'];
                 $_SESSION['login_admin'] = 'login_admin';
-                echo "berhasil";
                 return true;
             }else{
-                echo"gagal";
                 return false;
             }
         }

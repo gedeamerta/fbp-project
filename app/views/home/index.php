@@ -128,7 +128,7 @@
     <div id="carouselExampleInterval" class="carousel slide mt-2" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-interval="1200">
-                <img src="<?= baseurl ?>/assets/images/before-girl.jpg" class="d-block w-100" alt="..." />
+                <img src="<?= baseurl ?>/assets/images/before-girl-2.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item" data-interval="1200">
                 <img src="<?= baseurl ?>/assets/images/before-man.jpg" class="d-block w-100" alt="..." />
@@ -164,8 +164,7 @@
                 <!-- Box-1 -->
                 <?php foreach($data['getTesti'] as $testi) : ?>
                 <div class="col-lg-6">
-                    <div class="box d-flex align-items-center wow fadeInLeft" data-aos="zoom-out-up"
-                        data-aos-duration="1000">
+                    <div class="box d-flex align-items-center wow fadeInLeft">
                         <div class="content">
                             <h3><?= $testi['name']?><br /><span style="font-size: 16px"><?=$testi['job']?></span></h3>
                             <p>
@@ -190,65 +189,51 @@
 </div>
 
 <!-- Contact Start -->
-<div class="container-lg">
+<div class="container" style="margin-top: 5em">
     <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
             <h2 class="text-title">
-                <span class="underline-title-text">Contact</span>
+                <span class="underline-title-text">Contact Us</span>
             </h2>
+            <h2 class="subtitle-text">Share your ideas, ask questions, send me a message, or chat me, and start building
+                your website!</h2>
         </div>
     </div>
 </div>
-<div class="bg-contact">
-    <h1 class="subtitle-contact">
-        We love question and feedback - and we’re always happy to help! Here
-        <br />
-        are some ways to contact us
-    </h1>
-
-    <div class="container">
-        <div class="container-contact col-md-12 col-sm-12">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-lg-6 mb-4">
-                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
-                        <div class="card-body">
-                            <h5 class="card-title title-card-contact">Talk to Me !</h5>
-                            <p class="card-text subtitle-card-contact">
-                                Contact me to request a training day and tell or give advice on
-                                the exercises that have been given
-                            </p>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 text-center link-contact">
-                                        <img src="<?= baseurl ?>/assets/images/phone-contact.svg" alt="" />
-                                        <a
-                                            href="https://wa.me/6287861250115?text=Halo%20saya%20ingin%20mulai%20latihan%20!">+6287861250115</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="<?= baseurl ?>/assets/images/contact-logo.png" alt="">
+        </div>
+        <div class="col-lg-6">
+            <form action="" id="contact-form" class="form-contact">
+                <input type="hidden" name="contact_number" />
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name" class="label-contact">Name</label>
+                        <input type="text" class="form-control border-form-contact" id="name" name="user_name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4" class="label-contact">Email</label>
+                        <input type="email" class="form-control border-form-contact" id="inputEmail4" name="user_email">
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card card-contact" data-aos="zoom-out-up" data-aos-delay="1000">
-                        <div class="card-body">
-                            <h5 class="card-title title-card-contact">Email Me !</h5>
-                            <p class="card-text subtitle-card-contact">
-                                Send all complaints, or fun things that have been passed during
-                                the training. We are very open to your opinions
-                            </p>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 text-center link-contact">
-                                        <img src="<?= baseurl ?>/assets/images/email-card.svg" alt="" />
-                                        <a href="mailto:fbp.bali@gmail.com?subject=Hello%20Coach">fbp.bali@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="textarea" class="label-contact">Message</label>
+                        <textarea class="form-control border-form-contact" id="textarea" rows="8" cols="1"
+                            name="message">
+                        </textarea>
                     </div>
                 </div>
-            </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-3 p-0" value="Send">
+                            <span> Send Message</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

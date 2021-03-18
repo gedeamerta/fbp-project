@@ -12,6 +12,47 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/png" sizes="16x16" href="<?= baseurl ?>/assets/images/logo.png">
 
+    <!-- Sweet Alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Form Contact Start -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init("user_ccrVDCLLQBjfeTTqocDJh");
+    })();
+    </script>
+    <script type="text/javascript">
+    window.onload = function() {
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = (Math.random() * 100000) | 0;
+                // these IDs from the previous steps
+                emailjs
+                    .sendForm("service_3htdi5z", "template_803lvlc", "#contact-form")
+                    .then(
+                        function(response) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Success Send Message',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        },
+                        function(error) {
+                            console.log("FAILED...", error);
+                        }
+                    );
+            });
+    };
+    </script>
+    <!-- Form Contact End -->
+
     <title><?= $data['title'] ?></title>
 
     <style>
@@ -80,7 +121,6 @@
 
     /* // Footer */
     .footer {
-        padding-top: 15em;
         padding-bottom: 2em;
     }
 
@@ -97,18 +137,7 @@
         transition: 0.5s;
     }
 
-    @media only screen and (min-width: 320px) and (max-width: 330px) {
-        .footer {
-            padding-top: 40em;
-            padding-bottom: 5em;
-        }
-    }
-
     @media only screen and (min-width: 360px) and (max-width: 1200px) {
-        .footer {
-            padding-top: 40em;
-            padding-bottom: 5em;
-        }
 
         .footer .logo-footer {
             margin-left: 3em;

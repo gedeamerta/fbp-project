@@ -62,16 +62,6 @@ tinymce.init({
     tinycomments_author: 'Author name',
 });
             </script>
-            <!-- <script>
-tinymce.init({
-    selector: '#descriptions'
-});
-            </script>
-            <script>
-tinymce.init({
-    selector: '#descriptions2'
-});
-            </script> -->
             <script>
 $(document).ready(function() {
     $('#packagesTable').DataTable();
